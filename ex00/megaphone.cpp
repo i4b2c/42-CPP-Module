@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 void ft_putstr(char *str)
 {
@@ -9,7 +10,7 @@ void ft_putstr(char *str)
 	{
 		if(str[i] >= 'a' && str[i] <= 'z')
 			str[i] -= 32;
-		std::cout << str[i++];
+		cout << str[i++];
 	}
 }
 
@@ -24,7 +25,7 @@ int main(int ac ,char **av)
 			ft_putstr(av[i++]);
 	}
 	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << std::endl;
+		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	cout << endl;
 	return 0;
 }
