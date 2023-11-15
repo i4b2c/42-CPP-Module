@@ -1,4 +1,4 @@
-#include "contact.hpp"
+#include "../include/contact.hpp"
 
 void Contact::setInfo(void)
 {
@@ -11,9 +11,16 @@ void Contact::setInfo(void)
 	cout << "Nickname: ";
 	getline(cin, this->nickname);
 	cin.clear();
-	cout << "Phone Number: ";
-	getline(cin, this->phone_number);
-	cin.clear();
+	while(1)
+	{
+		cout << "Phone Number: ";
+		getline(cin, this->phone_number);
+		cin.clear();
+		if(this->phone_number.find_first_not_of("0123456789") == string::npos)
+			break;
+		else
+			cout << "Invalid number" << endl;
+	}
 	cout << "Darkest Secret: ";
 	getline(cin, this->darkest_secret);
 	cin.clear();

@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "../include/phonebook.hpp"
 
 using std::string;
 using std::cout;
@@ -20,9 +20,16 @@ void PhoneBook::searchContact(void)
 	string index;
 	int num_contact;
 
-	cout << "Write the index of the contact you looking for" << endl;
-	getline(cin,index);
-	cin.clear();
+	while(1)
+	{
+		cout << "Write the index of the contact you looking for" << endl << "$> ";
+		getline(cin,index);
+		cin.clear();
+		if(index.find_first_not_of("0123456789") == string::npos)
+			break;
+		else
+			cout << "Invalid number" << endl;
+	}
 	num_contact = atoi(index.c_str()); //preciso checkar se e um int valido
 	if(this->number_contacts == 0)
 		cout << "You must implement some contact first :)" << endl;
