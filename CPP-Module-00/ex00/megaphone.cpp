@@ -1,31 +1,30 @@
 #include <iostream>
-using namespace std;
+#include <cctype>
+
+using std::cout;
+using std::endl;
+using std::toupper;
 
 void ft_putstr(char *str)
 {
 	int i;
-
-	i = 0;
-	while(str[i])
-	{
-		if(str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
-		cout << str[i++];
-	}
+	for(i = 0; str[i]; i++)
+		cout << char(toupper(str[i]));
+	if(str[i - 1] != ' ')
+		cout << ' ';
 }
 
-int main(int ac ,char **av)
+void print_megaphone(char **av)
 {
-	int i;
-
-	i = 1;
-	if(ac != 1)
-	{
-		while(av[i])
-			ft_putstr(av[i++]);
-	}
-	else
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+	for(int i = 1; av[i] ; i++)
+		ft_putstr(av[i]);
 	cout << endl;
-	return 0;
+}
+
+int main(int ac, char **av)
+{
+	if(ac == 1)
+		cout << "* LOUD AND UNBERABLE FEEDBACK NOISE *" << endl;
+	else
+		print_megaphone(av);
 }

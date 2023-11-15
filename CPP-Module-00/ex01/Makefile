@@ -1,6 +1,19 @@
+NAME = phonebook
 CC = c++
+FLAGS = -Wall -Werror -Wextra -std=c++98
 
-all:
-	$(CC) main.cpp -o exe
+SRC =	contact.cpp \
+		phonebook.cpp \
+
+OBJS = $(SRC:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) main.cpp -o $(NAME)
+
 clean:
-	rm -rf exe
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
