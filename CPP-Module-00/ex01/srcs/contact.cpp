@@ -2,6 +2,7 @@
 
 void Contact::setInfo(void)
 {
+	print_menu();
 	cout << "First Name: ";
 	getline(cin, this->first_name);
 	cin.clear();
@@ -16,7 +17,7 @@ void Contact::setInfo(void)
 		cout << "Phone Number: ";
 		getline(cin, this->phone_number);
 		cin.clear();
-		if(this->phone_number.find_first_not_of("0123456789") == string::npos)
+		if(this->phone_number.find_first_not_of("0123456789") == string::npos && phone_number != "")
 			break;
 		else
 			cout << "Invalid number" << endl;
@@ -27,6 +28,7 @@ void Contact::setInfo(void)
 }
 void Contact::printInfo(void)
 {
+	print_menu();
 	cout << "First name: " << this->first_name << endl;
 	cout << "Last name: " << this->last_name << endl;
 	cout << "Nickname: " << this->nickname << endl;

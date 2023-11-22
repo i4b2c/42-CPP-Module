@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <iomanip>
+#include <string>
 
 using std::string;
 using std::cout;
@@ -29,5 +31,7 @@ class Contact
 		string returnSecret();
 
 };
+
+void print_menu();
 
 #endif

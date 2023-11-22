@@ -1,5 +1,13 @@
 #include "include/phonebook.hpp"
 
+void print_menu(void)
+{
+	system("clear");
+	    		std::cout << "+" << std::string(43, '-') << "+" << std::endl;
+	cout << "|" << std::setw(26) << "PhoneBook" << std::setw(18) << "|" <<  endl;
+	    		std::cout << "+" << std::string(43, '-') << "+" << std::endl;
+}
+
 int main(void)
 {
 	PhoneBook book;
@@ -7,7 +15,8 @@ int main(void)
 
 	while(1)
 	{
-		cout << "Choose a option:" << endl << "ADD" << endl << "SEARCH\n->";
+		print_menu();
+		cout << "Choose a option:" << endl << "ADD" << endl << "SEARCH" << endl << "EXIT" << endl << "pb: ";
 		getline(cin, option);
 		cin.clear();
 		if(option == "ADD")
