@@ -1,5 +1,11 @@
 #include "include/phonebook.hpp"
 
+void pressEnterToContinue(void)
+{
+	std::cout << std::endl << "Press Enter to continue" << std::endl;
+	std::cin.ignore();
+}
+
 void print_menu(void)
 {
 	system("clear");
@@ -26,6 +32,9 @@ int main(void)
 		else if(option == "EXIT")
 			return EXIT_SUCCESS;
 		else
-			cout << "Invalid option" << endl;
+		{
+			cout << std::endl << "Invalid option" << endl;
+			pressEnterToContinue();
+		}
 	}
 }
