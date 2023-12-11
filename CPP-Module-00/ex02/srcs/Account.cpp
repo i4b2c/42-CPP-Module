@@ -3,6 +3,7 @@
 #include <functional>
 #include "../include/Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -66,19 +67,35 @@ void Account::makeDeposit(int deposit)
 	this->_nbDeposits += 1;
 	Account::_totalAmount += deposit;
 	Account::_totalNbDeposits += 1;
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ';' \
+	<< "p_amount:" << this->_amount - deposit << ';' \
+	<< "deposit:" << deposit << ";" \
+	<< "amount:" << this->_amount << ";" \
+	<< "nb_deposits:" << this->_nbDeposits << ';' << std::endl;
 }
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-	if(this->_amount - withdrawal >= 0)
+	bool check;
+
+	(this->_amount - withdrawal < 0) ? check = false : check = true;
+	Account::_displayTimestamp();
+	std::cout << "index:" << this->_accountIndex << ';' \
+	<< "p_amount:" << this->_amount << ';';
+	if(check == false)
+		std::cout << "withdrawal:refused" << std::endl;
+	else
 	{
 		this->_amount -= withdrawal;
 		this->_nbWithdrawals += 1;
 		Account::_totalAmount -= withdrawal;
 		Account::_totalNbWithdrawals += 1;
-		return true;
+		std::cout << "withdrawal:" << withdrawal << ";" \
+		<< "amount:" << this->_amount << ";" \
+		<< "nb_withdrawals:" << this->_nbWithdrawals << ';' << std::endl;
 	}
-	return false;
+	return check;
 }
 
 int Account::checkAmount(void) const
@@ -97,6 +114,15 @@ void Account::displayStatus(void) const
 
 void Account::_displayTimestamp(void)
 {
-	//incompleto , falta usar a funcao std::time
-	std::cout << '[' << 0 << "] ";
+	std::time_t time = std::time(nullptr);
+	std::tm *localTime = std::localtime(&time);
+	std::cout	<< '[' \
+				<< (localTime->tm_year + 1900) \
+				<< (localTime->tm_mon + 1) \
+				<< localTime->tm_mday \
+				<< "_" \
+				<< localTime->tm_hour \
+				<< localTime->tm_min \
+				<< localTime->tm_sec \
+				<< "] ";
 }
