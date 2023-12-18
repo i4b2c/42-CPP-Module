@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cctype>
+#include <cstdlib>
 
 void ft_putstr(char *str)
 {
@@ -23,4 +24,5 @@ int main(int ac, char **av)
 		std::cout << "* LOUD AND UNBERABLE FEEDBACK NOISE *" << std::endl;
 	else
 		print_megaphone(av);
+	return (EXIT_SUCCESS);
 }
