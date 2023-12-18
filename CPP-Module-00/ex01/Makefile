@@ -1,21 +1,34 @@
+#PROGRAM NAME
 NAME = phonebook
-CC = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC =	srcs/contact.cpp \
-		srcs/phonebook.cpp \
-		main.cpp \
+#PROGRAMMING LANGUAGE
+CXX = c++
 
-OBJS = $(SRC:.cpp=.o)
+#ARQUIVOS
+SRCS =	srcs/phonebook.cpp \
+		srcs/contact.cpp \
+		srcs/main.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+#HEADER
+HEADER = -I ./include
+
+#FLAGS
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 $(HEADER)
+
+#COMANDOS
+RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
+
 re: fclean all

@@ -1,9 +1,9 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
-#include "../include/Account.hpp"
 #include <iostream>
 #include <ctime>
+#include "Account.hpp"
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
@@ -114,8 +114,11 @@ void Account::displayStatus(void) const
 
 void Account::_displayTimestamp(void)
 {
-	std::time_t time = std::time(nullptr);
-	std::tm *localTime = std::localtime(&time);
+	std::time_t time;
+	std::time(&time);
+	std::tm *localTime;
+
+	localTime = std::localtime(&time);
 	std::cout	<< '[' \
 				<< (localTime->tm_year + 1900) \
 				<< (localTime->tm_mon + 1) \
