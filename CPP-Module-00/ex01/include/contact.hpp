@@ -7,28 +7,22 @@
 #include <iomanip>
 #include <string>
 
-using std::string;
-using std::cout;
-using std::cin;
-using std::getline;
-using std::endl;
-
 class Contact
 {
 	private:
-		string first_name;
-		string last_name;
-		string nickname;
-		string phone_number;
-		string darkest_secret;
+		std::string first_name;
+		std::string last_name;
+		std::string nickname;
+		std::string phone_number;
+		std::string darkest_secret;
 	public:
 		void setInfo();
 		void printInfo();
-		string returnFirstName();
-		string returnLastName();
-		string returnNickname();
-		string returnPhone();
-		string returnSecret();
+		std::string returnFirstName();
+		std::string returnLastName();
+		std::string returnNickname();
+		std::string returnPhone();
+		std::string returnSecret();
 
 };
 

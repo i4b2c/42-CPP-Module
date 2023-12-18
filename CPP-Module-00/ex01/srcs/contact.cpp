@@ -3,60 +3,60 @@
 void Contact::setInfo(void)
 {
 	print_menu();
-	cout << "First Name: ";
-	getline(cin, this->first_name);
-	cin.clear();
-	cout << "Last Name: ";
-	getline(cin, this->last_name);
-	cin.clear();
-	cout << "Nickname: ";
-	getline(cin, this->nickname);
-	cin.clear();
+	std::cout << "First Name: ";
+	std::getline(std::cin, this->first_name);
+	std::cin.clear();
+	std::cout << "Last Name: ";
+	std::getline(std::cin, this->last_name);
+	std::cin.clear();
+	std::cout << "Nickname: ";
+	std::getline(std::cin, this->nickname);
+	std::cin.clear();
 	while(1)
 	{
-		cout << "Phone Number: ";
-		getline(cin, this->phone_number);
-		cin.clear();
-		if(this->phone_number.find_first_not_of("0123456789") == string::npos && phone_number != "")
+		std::cout << "Phone Number: ";
+		std::getline(std::cin, this->phone_number);
+		std::cin.clear();
+		if(this->phone_number.find_first_not_of("0123456789") == std::string::npos && phone_number != "")
 			break;
 		else
-			cout << "Invalid number" << endl;
+			std::cout << "Invalid number" << std::endl;
 	}
-	cout << "Darkest Secret: ";
-	getline(cin, this->darkest_secret);
-	cin.clear();
+	std::cout << "Darkest Secret: ";
+	std::getline(std::cin, this->darkest_secret);
+	std::cin.clear();
 }
 void Contact::printInfo(void)
 {
 	print_menu();
-	cout << "First name: " << this->first_name << endl;
-	cout << "Last name: " << this->last_name << endl;
-	cout << "Nickname: " << this->nickname << endl;
-	cout << "Phone number: " << this->phone_number << endl;
-	cout << "Darkest secret: " << this->darkest_secret << endl;
+	std::cout << "First name: " << this->first_name << std::endl;
+	std::cout << "Last name: " << this->last_name << std::endl;
+	std::cout << "Nickname: " << this->nickname << std::endl;
+	std::cout << "Phone number: " << this->phone_number << std::endl;
+	std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
 }
 
-string Contact::returnFirstName(void)
+std::string Contact::returnFirstName(void)
 {
 	return(this->first_name);
 }
 
-string Contact::returnLastName(void)
+std::string Contact::returnLastName(void)
 {
 	return(this->last_name);
 }
 
-string Contact::returnNickname(void)
+std::string Contact::returnNickname(void)
 {
 	return(this->nickname);
 }
 
-string Contact::returnPhone(void)
+std::string Contact::returnPhone(void)
 {
 	return(this->phone_number);
 }
 
-string Contact::returnSecret(void)
+std::string Contact::returnSecret(void)
 {
 	return(this->darkest_secret);
 }
