@@ -1,4 +1,4 @@
-#include "contact.hpp"
+#include "../include/contact.hpp"
 
 void Contact::setInfo(void)
 {

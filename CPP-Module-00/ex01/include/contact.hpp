@@ -1,11 +1,11 @@
 #ifndef CONTACT_HPP
-#define CONTACT_HPP
+# define CONTACT_HPP
 
-#include <iostream>
-#include <vector>
-#include <cstdlib>
-#include <iomanip>
-#include <string>
+# include <iostream>
+# include <vector>
+# include <cstdlib>
+# include <iomanip>
+# include <string>
 
 class Contact
 {
@@ -26,6 +26,6 @@ class Contact
 
 };
 
-void print_menu();
+void	print_menu();
 
 #endif

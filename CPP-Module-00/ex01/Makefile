@@ -11,11 +11,8 @@ SRCS =	srcs/phonebook.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-#HEADER
-HEADER = -I ./include
-
 #FLAGS
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 $(HEADER)
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 #COMANDOS
 RM = rm -rf
