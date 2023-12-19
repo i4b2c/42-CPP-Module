@@ -1,17 +1,29 @@
-NAME = exe
-CC = c++
-FLAGS = -Wall -Werror -Wextra -std=c++98
-SRCS =	main.cpp \
+#PROGRAM NAME
+NAME = brainzz
 
-RM = rm -r
-OBJS = $(SRCS:%.cpp=%.o)
+#PROGRAMMING LANGUAGE
+CXX = c++
+
+#ARQUIVOS
+SRCS =	srcs/main.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+#FLAGS
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
+#COMANDOS
+RM = rm -rf
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
 clean:
 	$(RM) $(OBJS)
+
 fclean: clean
 	$(RM) $(NAME)
+
 re: fclean all
