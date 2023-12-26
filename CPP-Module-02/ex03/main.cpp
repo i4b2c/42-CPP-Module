@@ -40,7 +40,7 @@ class Point
 {
 	private:
 		const Fixed x;
-		Fixed y;
+		const Fixed y;
 	public:
 		Point(void);
 		Point(const float x, const float y);
@@ -57,7 +57,13 @@ Fixed Point::returnY(void) const { return this->y; };
 
 Point &Point::operator=(const Point &copyPoint)
 {
-	(Fixed)this->x = Fixed(1);
+	Point temp(copyPoint.x.toFloat(), copyPoint.y.toFloat());
+
+	//uso const_cast para "remover" temporariamente o const do <Fixed>
+	//e assim mudar o valor
+	const_cast<Fixed&>(this->x) = temp.returnX();
+	const_cast<Fixed&>(this->y) = temp.returnY();
+
 	return *this;
 }
 
@@ -197,9 +203,7 @@ void Fixed::setRawBits(int const raw)
 	this->value = raw;
 }
 
-Fixed::~Fixed(void)
-{
-}
+Fixed::~Fixed(void) {};
 
 Fixed::Fixed(const int raw)
 {
@@ -233,8 +237,10 @@ int main( void )
 	const Point b(2,3);
 
 	std::cout << a.returnX() << std::endl;
+	std::cout << a.returnY() << std::endl;
 	a = b;
 	std::cout << a.returnX() << std::endl;
+	std::cout << a.returnY() << std::endl;
 	// const Point init(3,4);
 	// Point a;
 	// std::cout << init.returnX() << " e " << init.returnY() << std::endl;
