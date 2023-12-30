@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include <bits/stdc++.h>
 
 class Fixed {
@@ -49,7 +50,19 @@ class Point
 		~Point(void);
 		Fixed returnX(void) const;
 		Fixed returnY(void) const;
+		float xToFloat(void) const;
+		float yToFloat(void) const;
 };
+
+float Point::xToFloat(void) const
+{
+	return this->x.toFloat();
+}
+
+float Point::yToFloat(void) const
+{
+	return this->y.toFloat();
+}
 
 Fixed Point::returnX(void) const { return this->x; };
 
@@ -70,6 +83,10 @@ Point &Point::operator=(const Point &copyPoint)
 Point::Point()
 : x(0), y(0)
 {};
+
+Point::Point(Point const &arg): x(arg.returnX()) , y(arg.returnY())
+{
+}
 
 Point::Point(const float xNum, const float yNum): x(xNum), y(yNum) {};
 
@@ -231,23 +248,44 @@ std::ostream &operator<<(std::ostream &stream, const Fixed &fixed)
 	return stream;
 }
 
+std::ostream &operator<<(std::ostream &stream, const Point &point)
+{
+	stream << point.returnX();
+	stream << point.returnY();
+	return stream;
+}
+
+int area(const Point &a,const Point &b, const Point &c)
+{
+	int num = 0.5 * roundf(a.xToFloat() * (b.yToFloat() - c.yToFloat()) + b.xToFloat() * (c.yToFloat() - a.yToFloat()) + c.xToFloat() * (a.yToFloat() - b.yToFloat()));
+	if(num < 0)
+		num *= -1;
+	return num;
+}
+
+bool bsp( Point const a, Point const b, Point const c, Point const point)
+{
+	int areaTotal = area(a,b,c);
+	(void)areaTotal;
+	int area1 = area(a,b,point);
+	int area2 = area(a,c,point);
+	int area3 = area(b,c,point);
+
+	if(areaTotal == (area1 + area2 + area3))
+		return true;
+	return false;
+}
+
 int main( void )
 {
 	Point a;
-	const Point b(2,3);
+	Point const b(4,0);
+	Point const c(2,4);
+	Point const d(4,4);
 
-	std::cout << a.returnX() << std::endl;
-	std::cout << a.returnY() << std::endl;
-	a = b;
-	std::cout << a.returnX() << std::endl;
-	std::cout << a.returnY() << std::endl;
-	// const Point init(3,4);
-	// Point a;
-	// std::cout << init.returnX() << " e " << init.returnY() << std::endl;
-	// std::cout << a.returnX() << " e " << a.returnY() << std::endl;
-	// a = init;
-	// std::cout << init.returnX() << " e " << init.returnY() << std::endl;
-	// std::cout << a.returnX() << " e " << a.returnY() << std::endl;
-
+	if(bsp(a,b,c,d) == true)
+		std::cout << "verdadeiro" << std::endl;
+	else
+		std::cout << "falso" << std::endl;
 	return 0;
 }

@@ -14,7 +14,19 @@ class ClapTrap
 		void beRepaired(unsigned int amount);
 		ClapTrap(const std::string &name);
 		ClapTrap(void);
+		~ClapTrap(void);
 };
+
+class ScavTrap: public ClapTrap
+{
+	public:
+		void guardGate();
+};
+
+ClapTrap::~ClapTrap(void)
+{
+	std::cout << "Default destructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap(void)
 : _name("default"), _hitPoints(10), _EnergyPoints(10), _AttackDamage(0)
@@ -69,37 +81,7 @@ void ClapTrap::takeDamage(unsigned int num)
 
 int main(void)
 {
-	ClapTrap basico;
-	ClapTrap bobao("Traigu");
-
-	bobao.attack("basico");
-	basico.takeDamage(11);
-	basico.takeDamage(11);
-	basico.takeDamage(11);
-	basico.takeDamage(11);
-	basico.takeDamage(11);
-	basico.takeDamage(11);
-	basico.beRepaired(2);
-	basico.takeDamage(11);
-	basico.takeDamage(11);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.beRepaired(1);
-	basico.takeDamage(11);
-	basico.takeDamage(11);
+	teste ok;
+	ok.attack("teste");
 	return 0;
 }
