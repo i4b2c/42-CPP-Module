@@ -1,11 +1,12 @@
 #PROGRAM NAME
-NAME = cb
+NAME = ct
 
 #PROGRAMMING LANGUAGE
 CXX = c++
 
 #ARQUIVOS
-SRCS =	main.cpp
+SRCS =	srcs/main.cpp \
+		srcs/ClapTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
