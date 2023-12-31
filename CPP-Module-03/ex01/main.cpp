@@ -12,32 +12,92 @@ class ClapTrap
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		std::string getName(void) const;
+		int getHitPoints(void) const;
+		int getEnergyPoints(void) const;
+		int getAttackDamage(void) const;
+		void setValue(std::string name, int Hit,int Energy, int Attack);
+		void setEnergyPoints(int num);
 		ClapTrap(const std::string &name);
 		ClapTrap(void);
 		~ClapTrap(void);
 };
 
+void ClapTrap::setEnergyPoints(int num)
+{
+	this->_EnergyPoints += num;
+}
+
+void ClapTrap::setValue(std::string name, int Hit, int Energy, int Attack)
+{
+	this->_name = name;
+	this->_hitPoints = Hit;
+	this->_EnergyPoints = Energy;
+	this->_AttackDamage = Attack;
+};
+
+std::string ClapTrap::getName(void) const
+{
+	return this->_name;
+}
+
+int ClapTrap::getHitPoints(void) const
+{
+	return this->_hitPoints;
+}
+
+int ClapTrap::getEnergyPoints(void) const
+{
+	return this->_EnergyPoints;
+}
+
+int ClapTrap::getAttackDamage(void) const
+{
+	return this->_AttackDamage;
+}
+
 class ScavTrap: public ClapTrap
 {
 	public:
 		void guardGate();
+		ScavTrap(void);
+		ScavTrap(std::string name);
+		~ScavTrap(void);
+		void attack(const std::string &target);
 };
+
+ScavTrap::ScavTrap(void)
+{
+	this->setValue("default",100,50,20);
+	std::cout << "Default ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name)
+{
+	this->setValue(name,100,50,20);
+	std::cout << "ScavTrap constructor called" << std::endl;
+}
+
+ScavTrap::~ScavTrap(void)
+{
+	std::cout << "Default ScavTrap destructor called" << std::endl;
+}
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "Default ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(void)
 : _name("default"), _hitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default ClapTrap constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &newName)
 : _name(newName), _hitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Constructor ClapTrap called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
@@ -79,9 +139,39 @@ void ClapTrap::takeDamage(unsigned int num)
 		std::cout << "he is already dead" << std::endl;
 }
 
+std::ostream &operator<<(std::ostream &stream,const ScavTrap &obj)
+{
+	stream << "ClapTrap " << obj.getName() << std::endl \
+	<< "Hit Points : " << obj.getHitPoints() << std::endl \
+	<< "Energy Points : " << obj.getEnergyPoints() << std::endl \
+	<< "Attack Damage : " << obj.getAttackDamage(); 
+	return stream;
+}
+
+void ScavTrap::guardGate(void)
+{
+	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode." << std::endl;
+}
+
+void ScavTrap::attack(const std::string &target)
+{
+	if(this->getEnergyPoints() > 0)
+	{
+		std::cout << "ScavTrap " \
+		<< this->getName() << " attacks " \
+		<< target << " causing " \
+		<< this->getAttackDamage() << " points of damage" << std::endl;
+		this->setEnergyPoints(-1);
+	}
+	else
+		std::cout << "no more energy to attack" << std::endl;
+}
+
 int main(void)
 {
-	teste ok;
-	ok.attack("teste");
+	ScavTrap ok("icaldas");
+	ok.attack("another one");
+	ok.guardGate();
+	std::cout << ok << std::endl;
 	return 0;
 }
