@@ -1,15 +1,13 @@
 #PROGRAM NAME
-NAME = dt
+NAME = animal
 
 #PROGRAMMING LANGUAGE
 CXX = c++
 
 #ARQUIVOS
 SRCS =	srcs/main.cpp \
-		srcs/ClapTrap.cpp \
-		srcs/ScavTrap.cpp \
-		srcs/FragTrap.cpp \
-		srcs/DiamondTrap.cpp 
+		srcs/Brain.cpp \
+		srcs/Animal.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
