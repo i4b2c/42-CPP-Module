@@ -1,9 +1,10 @@
 #ifndef DIAMONDTRAP_HPP
 #define DIAMONDTRAP_HPP
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-class DiamondTrap: public ClapTrap
+class DiamondTrap: public FragTrap, public ScavTrap
 {
     private:
         std::string name;
@@ -14,6 +15,8 @@ class DiamondTrap: public ClapTrap
 		int getDtEnergyPoints(void) const;
 		int getDtAttackDamage(void) const;
         void whoAmI(void);
+        void attack(const std::string &target) const;
+        using ScavTrap::attack;
 };
 
 #endif

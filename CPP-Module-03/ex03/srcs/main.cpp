@@ -15,6 +15,7 @@ int main(void)
 {
 	DiamondTrap ok("ithalo");
 	ok.whoAmI();
+	ok.attack("traigu");
 	std::cout << ok << std::endl;
 	return 0;
 }
