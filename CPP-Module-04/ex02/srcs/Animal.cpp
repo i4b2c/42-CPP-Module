@@ -2,12 +2,7 @@
 
 void Animal::makeSound(void) const
 {
-    if(this->type == "Dog")
-        std::cout << "woof woof" << std::endl;
-    else if(this->type == "Cat")
-        std::cout << "meow meow" << std::endl;
-    else
-        std::cout << "Undefined Animal sound" << std::endl;
+    std::cout << "Undefined Animal sound" << std::endl;
 }
 
 std::string Animal::getType(void) const
@@ -40,6 +35,11 @@ Dog::~Dog(void)
     std::cout << "Dog destructor called" << std::endl;
 }
 
+void Dog::makeSound(void) const
+{
+    std::cout << "woof woof" << std::endl;
+}
+
 //Cat class
 
 Cat::Cat(void)
@@ -53,4 +53,9 @@ Cat::~Cat(void)
 {
     delete this->animalBrain;
     std::cout << "Cat destructor called" << std::endl;
+}
+
+void Cat::makeSound(void) const
+{
+    std::cout << "meow meow" << std::endl;
 }
