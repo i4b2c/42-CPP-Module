@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "Default ScavTrap destructor called" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
 void ScavTrap::guardGate(void)

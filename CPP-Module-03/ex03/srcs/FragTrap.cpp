@@ -8,7 +8,7 @@ FragTrap::FragTrap(const std::string &name)
 
 FragTrap::FragTrap(void)
 {
-    std::cout << "FragTrap default constructor called" << std::endl;
+    std::cout << "Default FragTrap constructor called" << std::endl;
     this->setValue("default",100,100,30);
 }
 

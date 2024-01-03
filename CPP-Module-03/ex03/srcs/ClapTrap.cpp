@@ -35,7 +35,7 @@ int ClapTrap::getAttackDamage(void) const
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Default ClapTrap destructor called" << std::endl;
+	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(void)

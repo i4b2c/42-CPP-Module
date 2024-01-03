@@ -4,12 +4,21 @@
 
 DiamondTrap::DiamondTrap(const std::string &name): name(name)
 {
-    FragTrap Ft;
-    ScavTrap St;
+    std::cout << "DiamondTrap constructor called" << std::endl;
+    this->setValue(name + "_clap_name",FragTrap::getFtHitPoints(),ScavTrap::getStEnergyPoints() \
+    ,FragTrap::getFtAttackDamage());
+}
 
-    std::cout << "DiamondTrap default constructor called" << std::endl;
-    this->setValue(name + "_clap_name",Ft.getFtHitPoints(),St.getStEnergyPoints() \
-    ,Ft.getFtAttackDamage());
+DiamondTrap::DiamondTrap(void): name("default")
+{
+    std::cout << "Default DiamondTrap constructor called" << std::endl;
+    this->setValue("default_clap_name",FragTrap::getFtHitPoints(),ScavTrap::getStEnergyPoints() \
+    ,FragTrap::getFtAttackDamage());
+}
+
+DiamondTrap::~DiamondTrap(void)
+{
+    std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
 std::string DiamondTrap::getDtName(void) const
