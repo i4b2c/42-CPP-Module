@@ -1,11 +1,13 @@
 #PROGRAM NAME
-NAME = animal
+NAME = materia
 
 #PROGRAMMING LANGUAGE
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp
+SRCS =	srcs/main.cpp \
+		srcs/Materia.cpp \
+		srcs/Character.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

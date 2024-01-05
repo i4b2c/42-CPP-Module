@@ -1,37 +1,46 @@
-#pragma once
+#ifndef MATERIA_HPP
+#define MATERIA_HPP
+
+#include "Character.hpp"
 
 #include <string>
 #include <iostream>
+#include <stddef.h>
+
+class ICharacter;
 
 class AMateria
 {
     protected:
-        //std::string name;
+        const std::string type;
         // [...]   
     public:
         AMateria(std::string const & type);
+        virtual ~AMateria(void);
 
         //[...]
 
         std::string const & getType() const; //Returns the materia type
+        virtual void use(ICharacter & target);
         virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
 };
 
-class ICharacter
+class Ice: public AMateria
 {
     public:
-        virtual ~ICharacter() {}
-        virtual std::string const & getName() const = 0;
-        virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
+        Ice(void);
+        ~Ice(void);
+        void use(ICharacter & target);
+        AMateria* clone() const;
 };
 
-class IMateriaSource
+class Cure: public AMateria
 {
     public:
-        virtual ~IMateriaSource() {}
-        virtual void learnMateria(AMateria*) = 0;
-        virtual AMateria* createMateria(std::string const & type) = 0;
+        Cure(void);
+        ~Cure(void);
+        void use(ICharacter & target);
+        AMateria* clone() const;
 };
+
+#endif
