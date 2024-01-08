@@ -75,6 +75,10 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {
+    for(int idx = 0 ; idx < 4 ; idx += 1)
+    {
+        delete this->types[idx];
+    }
     std::cout << "MateriaSource deleted" << std::endl;
 }
 

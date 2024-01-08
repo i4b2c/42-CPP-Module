@@ -11,6 +11,10 @@ Character::Character(std::string name): name(name)
 
 Character::~Character(void) 
 {
+    for(int idx = 0 ; idx < 4 ; idx += 1)
+    {
+        delete this->inventory[idx];
+    }
     std::cout << "Character died" << std::endl;
 }
 
