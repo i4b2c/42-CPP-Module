@@ -87,7 +87,7 @@ void MateriaSource::learnMateria(AMateria * newType)
     int idx = 0;
 
     for(idx = 0; idx < 4 && this->types[idx] != NULL; idx += 1) {}
-    if(idx < 4){ this->types[idx] = newType; }
+    if(idx < 4 && idx >= 0){ this->types[idx] = newType; }
 }
 
 AMateria *MateriaSource::createMateria(std::string const & type)
