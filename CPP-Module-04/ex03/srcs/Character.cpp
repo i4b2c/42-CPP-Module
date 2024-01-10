@@ -6,13 +6,13 @@ Character::Character(std::string name): name(name)
     {
         this->inventory[idx] = NULL;
     }
-    std::cout << "Character created" << std::endl;
+    // std::cout << "Character created" << std::endl;
 }
 
 Character::~Character(void) 
 {
     for(int idx = 0 ; idx < 4 ; idx += 1) { delete this->inventory[idx]; }
-    std::cout << "Character died" << std::endl;
+    // std::cout << "Character died" << std::endl;
 }
 
 void Character::equip(AMateria * materia)

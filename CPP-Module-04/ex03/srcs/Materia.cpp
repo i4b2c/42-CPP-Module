@@ -7,12 +7,12 @@ const std::string &AMateria::getType(void) const
 
 AMateria::AMateria(std::string const & type): type(type)
 {
-    std::cout << "AMateria created" << std::endl;
+    // std::cout << "AMateria created" << std::endl;
 }
 
 AMateria::~AMateria(void)
 {
-    std::cout << "AMateria destroyed" << std::endl;
+    // std::cout << "AMateria destroyed" << std::endl;
 }
 
 void AMateria::use(ICharacter & target)
@@ -22,12 +22,12 @@ void AMateria::use(ICharacter & target)
 
 Ice::Ice(void): AMateria("ice")
 {
-    std::cout << "Ice material created" << std::endl;
+    // std::cout << "Ice material created" << std::endl;
 }
 
 Ice::~Ice(void)
 {
-    std::cout << "Ice material destroyed" << std::endl;
+    // std::cout << "Ice material destroyed" << std::endl;
 }
 
 void Ice::use(ICharacter & target)
@@ -44,12 +44,12 @@ AMateria * Ice::clone() const
 
 Cure::Cure(void): AMateria("cure")
 {
-    std::cout << "Cure material created" << std::endl;
+    // std::cout << "Cure material created" << std::endl;
 }
 
 Cure::~Cure(void)
 {
-    std::cout << "Cure material destroyed" << std::endl;
+    // std::cout << "Cure material destroyed" << std::endl;
 }
 
 void Cure::use(ICharacter & target)
@@ -70,7 +70,7 @@ MateriaSource::MateriaSource()
     {
         this->types[idx] = NULL;
     }
-    std::cout << "MateriaSource created" << std::endl;
+    // std::cout << "MateriaSource created" << std::endl;
 }
 
 MateriaSource::~MateriaSource()
@@ -79,7 +79,7 @@ MateriaSource::~MateriaSource()
     {
         delete this->types[idx];
     }
-    std::cout << "MateriaSource deleted" << std::endl;
+    // std::cout << "MateriaSource deleted" << std::endl;
 }
 
 void MateriaSource::learnMateria(AMateria * newType)
@@ -107,12 +107,12 @@ AMateria *MateriaSource::createMateria(std::string const & type)
 
 Materia::Materia(std::string type): AMateria(type)
 {
-    std::cout << "Materia created" << std::endl;
+    // std::cout << "Materia created" << std::endl;
 }
 
 Materia::~Materia(void)
 {
-    std::cout << "Materia destroyed" << std::endl;
+    // std::cout << "Materia destroyed" << std::endl;
 }
 
 void Materia::use(ICharacter & target)
