@@ -5,7 +5,7 @@ NAME = brainzz
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp
+SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
