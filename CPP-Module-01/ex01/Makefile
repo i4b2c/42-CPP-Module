@@ -5,9 +5,9 @@ NAME = brainzz
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/Zombie.cpp \
-		srcs/zombieHorde.cpp \
-		srcs/main.cpp
+SRCS =	Zombie.cpp \
+		zombieHorde.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
