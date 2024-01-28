@@ -1,4 +1,4 @@
-#include "../include/phonebook.hpp"
+#include "phonebook.hpp"
 
 void pressEnterToContinue(void)
 {

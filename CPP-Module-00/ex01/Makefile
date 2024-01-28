@@ -5,9 +5,9 @@ NAME = phonebook
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/phonebook.cpp \
-		srcs/contact.cpp \
-		srcs/main.cpp
+SRCS =	phonebook.cpp \
+		contact.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
