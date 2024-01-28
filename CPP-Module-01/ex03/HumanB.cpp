@@ -1,4 +1,4 @@
-#include "../include/HumanB.hpp"
+#include "HumanB.hpp"
 
 HumanB::HumanB(std::string name) : name(name) {}
 

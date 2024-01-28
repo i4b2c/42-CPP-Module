@@ -5,10 +5,10 @@ NAME = weapon
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/HumanA.cpp \
-		srcs/HumanB.cpp \
-		srcs/Weapon.cpp \
+SRCS =	main.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
+		Weapon.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
