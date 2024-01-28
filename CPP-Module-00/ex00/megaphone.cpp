@@ -7,14 +7,16 @@ void ft_putstr(char *str)
 	int i;
 	for(i = 0; str[i]; i++)
 		std::cout << char(toupper(str[i]));
-	if(str[i - 1] != ' ')
-		std::cout << ' ';
 }
 
 void print_megaphone(char **av)
 {
 	for(int i = 1; av[i] ; i++)
+	{
 		ft_putstr(av[i]);
+		if(av[i + 1] != NULL)
+			std::cout << ' ';
+	}
 	std::cout << std::endl;
 }
 
