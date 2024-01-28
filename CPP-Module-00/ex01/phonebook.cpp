@@ -20,7 +20,7 @@ void PhoneBook::searchContact(void)
 	string index;
 	int num_contact;
 
-	print_menu();
+	printMenu();
 	while(1)
 	{
     		std::cout << "+" << std::string(43, '-') << "+" << std::endl;
@@ -30,7 +30,7 @@ void PhoneBook::searchContact(void)
               << std::setw(10) << "Nickname" << "|" << std::endl;
     		std::cout << "+" << std::string(43, '-') << "+" << std::endl;
 
-    // Exibe os contatos
+    // exibe os contatos
     for (size_t i = 0; i < 8; ++i) {
         std::cout << "|" << std::setw(10) << (i + 1) << "|"
                   << std::setw(10) << std::setw(10) << (contacts[i].returnFirstName().length() > 10 ? contacts[i].returnFirstName().substr(0, 9) + "." : contacts[i].returnFirstName()) << "|"
@@ -47,15 +47,14 @@ void PhoneBook::searchContact(void)
 		else
 			cout << "Invalid number" << endl;
 	}
-	num_contact = atoi(index.c_str()); //preciso checkar se e um int valido
+	num_contact = atoi(index.c_str());
 	if(this->number_contacts == 0)
 		cout << "You must implement some contact first :)" << endl;
 	else if(this->number_contacts < size_t(num_contact) || num_contact < 1)
 		cout << "Choose a valid number (1 - " << this->number_contacts << ")\n";
 	else
 		this->contacts[num_contact - 1].printInfo();
-	cout << endl << "Press Enter to Continue" << endl;
-	cin.ignore();
+	pressEnterToContinue();
 }
 
 PhoneBook::PhoneBook(void)

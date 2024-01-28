@@ -17,4 +17,6 @@ class PhoneBook
 		void searchContact(void);
 };
 
+void pressEnterToContinue(void);
+
 #endif

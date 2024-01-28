@@ -26,6 +26,6 @@ class Contact
 
 };
 
-void	print_menu();
+void	printMenu();
 
 #endif

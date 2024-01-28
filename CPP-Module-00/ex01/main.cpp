@@ -6,7 +6,7 @@ void pressEnterToContinue(void)
 	std::cin.ignore();
 }
 
-void print_menu(void)
+void printMenu(void)
 {
 	system("clear");
 	std::cout << "+" << std::string(43, '-') << "+" << std::endl;
@@ -14,7 +14,7 @@ void print_menu(void)
 	std::cout << "+" << std::string(43, '-') << "+" << std::endl;
 }
 
-void print_option(void)
+void printOption(void)
 {
 	std::cout << "Choose a option:" \
 	<< std::endl << "ADD" \
@@ -36,8 +36,8 @@ int main(int ac, char **av)
 	}
 	while(1)
 	{
-		print_menu();
-		print_option();
+		printMenu();
+		printOption();
 		std::getline(std::cin, option);
 		std::cin.clear();
 		if(option == "ADD")

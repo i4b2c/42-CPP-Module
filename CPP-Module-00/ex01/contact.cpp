@@ -2,7 +2,7 @@
 
 void Contact::setInfo(void)
 {
-	print_menu();
+	printMenu();
 	std::cout << "First Name: ";
 	std::getline(std::cin, this->first_name);
 	std::cin.clear();
@@ -28,7 +28,7 @@ void Contact::setInfo(void)
 }
 void Contact::printInfo(void)
 {
-	print_menu();
+	printMenu();
 	std::cout << "First name: " << this->first_name << std::endl;
 	std::cout << "Last name: " << this->last_name << std::endl;
 	std::cout << "Nickname: " << this->nickname << std::endl;
