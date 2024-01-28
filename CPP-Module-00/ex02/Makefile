@@ -5,8 +5,8 @@ NAME = account
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/Account.cpp \
-		srcs/tests.cpp
+SRCS =	Account.cpp \
+		tests.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
