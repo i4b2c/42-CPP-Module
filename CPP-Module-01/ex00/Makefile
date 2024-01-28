@@ -5,10 +5,10 @@ NAME = brainzz
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/Zombie.cpp \
-		srcs/randomChump.cpp \
-		srcs/newZombie.cpp \
-		srcs/main.cpp
+SRCS =	Zombie.cpp \
+		randomChump.cpp \
+		newZombie.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
