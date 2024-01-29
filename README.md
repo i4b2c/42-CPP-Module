@@ -3,7 +3,7 @@
 ## Module 00
 
 #### Ex 00
-##### What do you need to know ?
+##### Objectives
 * Basic ostream  
 std::cout -> (Console Output) to sends formatted output to stdout.
 
@@ -11,7 +11,7 @@ std::cout -> (Console Output) to sends formatted output to stdout.
 https://cplusplus.com/reference/iostream/cout/
 
 #### Ex 01
-##### What do you need to know ?
+##### Objectives
 * Basic istream  
 std::cin (Console Input) -> used to get user input from an external source.  
 * Basic string  
@@ -25,7 +25,7 @@ https://cplusplus.com/reference/string/string/
 https://cplusplus.com/reference/iomanip/
 
 #### Ex 02
-##### What do you need to know ?  
+##### Objectives 
 * Constructor and Destructor  
 Constructors and destructors are special member functions of classes that are used to construct and destroy class objects
 * Classes  
