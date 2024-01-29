@@ -1,3 +1,9 @@
-# CPP-Module
+# CPP-Modules
 
-Still Working on
+## Module 00
+
+#### Ex 00
+##### What do you need to know ?
+* Basic iostream
+##### resorces
+https://cplusplus.com/reference/iostream/
