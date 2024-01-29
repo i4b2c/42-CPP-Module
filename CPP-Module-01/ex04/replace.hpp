@@ -8,7 +8,7 @@
 
 
 #define E_OFILE "Error opening the file"
-#define E_SYNTAX "Syntax Error: ./exe [file] [string 1] [string 2]"
+#define E_SYNTAX "Syntax Error: ./replace [file] [string 1] [string 2]"
 
 void copyToString(std::string avString[],char **av, int ac);
 int checkSyntax(int ac);

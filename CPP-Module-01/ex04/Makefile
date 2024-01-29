@@ -5,8 +5,8 @@ NAME = replace
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/replace.cpp
+SRCS =	main.cpp \
+		replace.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

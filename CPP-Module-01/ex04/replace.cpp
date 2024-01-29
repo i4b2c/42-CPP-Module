@@ -1,4 +1,4 @@
-#include "../include/replace.hpp"
+#include "replace.hpp"
 
 void copyToString(std::string avString[],char **av, int ac)
 {
@@ -53,8 +53,7 @@ void execReplace(std::string avString[],std::ifstream &openFile,std::ofstream &o
 	while(1)
 	{
 		newLine = "";
-		std::getline(openFile, line);
-		if(line == "")
+		if(!(std::getline(openFile, line)))
 			break;
 		position = 0;
 		positionFound = 0;
