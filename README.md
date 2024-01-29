@@ -37,3 +37,7 @@ std::time ->  returns the current calendar time as an object of type time_t
 https://www.codementor.io/@supernerdd7/constructor-and-destructor-in-c-1r8kkogm6j  
 https://www.programiz.com/cpp-programming/object-class  
 https://cplusplus.com/reference/ctime/time/
+
+## Module 01
+
+#### Ex 00
