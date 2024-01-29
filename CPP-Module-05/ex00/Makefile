@@ -5,7 +5,8 @@ NAME = Bureaucrat
 CXX = c++
 
 #ARQUIVOS
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		Bureaucrat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
