@@ -14,6 +14,7 @@ int Bureaucrat::getGrade(void) const
 //Constructor
 Bureaucrat::Bureaucrat(std::string name, int grade): name(name)
 {
+    std::cout << DEFAULT_CONSTRUCTOR_BUREAUCRAT << std::endl;
     if(grade < 1)
         throw GradeTooHighException("Bureaucrat exception: Grade too high");
     else if(grade > 150)
@@ -22,8 +23,16 @@ Bureaucrat::Bureaucrat(std::string name, int grade): name(name)
         this->grade = grade;
 }
 
+Bureaucrat::Bureaucrat(Bureaucrat & cpy): name(cpy.getName()), grade(cpy.getGrade())
+{
+    std::cout << COPY_CONSTRUCTOR_BUREAUCRAT << std::endl;
+}
+
 //Destructor
-Bureaucrat::~Bureaucrat(void){};
+Bureaucrat::~Bureaucrat(void)
+{
+    std::cout << DESTRUCTOR_BUREAUCRAT << std::endl;
+}
 
 //Grade too high Functions
 Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw(){};

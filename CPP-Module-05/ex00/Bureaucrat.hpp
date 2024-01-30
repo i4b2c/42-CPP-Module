@@ -5,6 +5,10 @@
 #include <string>
 #include <exception>
 
+#define DEFAULT_CONSTRUCTOR_BUREAUCRAT "Default Constructor Bureaucrat Called"
+#define COPY_CONSTRUCTOR_BUREAUCRAT "Copy Constructor Bureaucrat Called"
+#define DESTRUCTOR_BUREAUCRAT "Destructor Bureaucrat Called"
+
 class Bureaucrat
 {
     private:
@@ -12,6 +16,7 @@ class Bureaucrat
         int grade;
     public:
         Bureaucrat(std::string name,int grade);
+        Bureaucrat(Bureaucrat & cpy);
         virtual ~Bureaucrat(void);
 
         const std::string getName(void) const;
