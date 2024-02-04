@@ -1,11 +1,13 @@
 #PROGRAM NAME
-NAME = Bureaucrat
+NAME = Form
 
 #PROGRAMMING LANGUAGE
 CXX = c++
 
 #ARQUIVOS
-SRCS =	main.cpp
+SRCS =	main.cpp \
+		Bureaucrat.cpp \
+		Form.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
