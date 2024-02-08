@@ -11,7 +11,7 @@ class Form
 	private:
 		const std::string	_name;
 		bool				_signedValue;
-		const int			_grade;
+		const int			_gradeToExecute;
 		const int			_gradeToSigne;
 	public:
 		Form(const std::string & name , const int & grade ,const int & gradeToSigne);
@@ -21,7 +21,7 @@ class Form
 
 		std::string getName(void) const;
 		bool getSignedValue(void) const;
-		int getGrade(void) const;
+		int getGradeToExecute(void) const;
 		int getGradeToSigne(void) const;
 
 		//Class
