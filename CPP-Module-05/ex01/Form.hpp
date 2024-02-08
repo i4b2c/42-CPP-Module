@@ -4,7 +4,10 @@
 #include "Bureaucrat.hpp"
 
 #define DEFAULT_CONSTRUCTOR_FORM "Default Constructor Form Called"
+#define CONSTRUCTOR_FORM "Constructor Form Called"
+#define COPY_CONSTRUCTOR_FORM "Copy Constructor Form Called"
 #define DESTRUCTOR_FORM "Destructor Form Called"
+#define OPERATOR_EQUAL_FORM "Operator '=' Bureaucrat Called"
 
 class Form
 {
@@ -15,6 +18,7 @@ class Form
 		const int			_gradeToSigne;
 	public:
 		Form(const std::string & name , const int & grade ,const int & gradeToSigne);
+		Form(const Form & cpy);
 		~Form(void);
 
 		void beSigned(const Bureaucrat & arg);
@@ -27,19 +31,15 @@ class Form
 		//Class
 		class GradeTooHighException: public std::exception
 		{
-			private:
-				const std::string message;
 			public:
-				GradeTooHighException(const std::string & msg);
+				GradeTooHighException(void) throw();
 				~GradeTooHighException() throw();
 				virtual const char* what() const throw();
 		};
 		class GradeTooLowException: public std::exception
 		{
-			private:
-				const std::string message;
 			public:
-				GradeTooLowException(const std::string & msg);
+				GradeTooLowException(void) throw();
 				~GradeTooLowException() throw();
 				virtual const char* what() const throw();
 		};

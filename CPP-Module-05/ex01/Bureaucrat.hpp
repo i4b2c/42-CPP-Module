@@ -6,8 +6,10 @@
 #include <exception>
 
 #define DEFAULT_CONSTRUCTOR_BUREAUCRAT "Default Constructor Bureaucrat Called"
+#define CONSTRUCTOR_BUREAUCRAT "Constructor Bureaucrat Called"
 #define COPY_CONSTRUCTOR_BUREAUCRAT "Copy Constructor Bureaucrat Called"
 #define DESTRUCTOR_BUREAUCRAT "Destructor Bureaucrat Called"
+#define OPERATOR_EQUAL_BUREAUCRAT "Operator '=' Bureaucrat Called"
 
 class Bureaucrat
 {
@@ -15,31 +17,30 @@ class Bureaucrat
         const std::string name;
         int grade;
     public:
-        Bureaucrat(std::string name,int grade);
-        Bureaucrat(Bureaucrat & cpy);
+        Bureaucrat(void);
+        Bureaucrat(const std::string name,const int grade);
+        Bureaucrat(const Bureaucrat & cpy);
+
+        Bureaucrat &operator=(Bureaucrat & cpy);
         virtual ~Bureaucrat(void);
 
         const std::string getName(void) const;
         int getGrade(void) const;
 
-        // void signForm(void) const;
+        void signForm(const std::string &name,bool & signed_value) const;
 
         class GradeTooHighException: public std::exception
         {
-            private:
-                const std::string message;
             public:
+                GradeTooHighException(void)throw();
                 ~GradeTooHighException(void) throw();
-                GradeTooHighException(const std::string &msg);
                 const char * what() const throw();
         };
         class GradeTooLowException: public std::exception
         {
-            private:
-                const std::string message;
             public:
+                GradeTooLowException(void) throw();
                 ~GradeTooLowException(void) throw();
-                GradeTooLowException(const std::string &msg);
                 const char * what() const throw();
         };
 };

@@ -1,13 +1,20 @@
 #include "Form.hpp"
 
+Form::Form(const Form & cpy)
+: _name(cpy.getName()),_signedValue(cpy.getSignedValue()),
+_gradeToExecute(cpy.getGradeToExecute()),_gradeToSigne(cpy.getGradeToSigne())
+{
+	std::cout << OPERATOR_EQUAL_FORM << std::endl;
+}
+
 Form::Form(const std::string & name , const int & gradeToExecute ,const int & gradeToSigne)
 :_name(name),_signedValue(false),_gradeToExecute(gradeToExecute),_gradeToSigne(gradeToSigne)
 {
-	std::cout << DEFAULT_CONSTRUCTOR_FORM << std::endl;
+	std::cout << CONSTRUCTOR_FORM << std::endl;
 	if(gradeToSigne <= 0 || gradeToExecute <= 0)
-		throw GradeTooHighException("Form exception: Grade too high");
+		throw Form::GradeTooHighException();
 	else if(gradeToSigne > 150 || gradeToExecute > 150)
-		throw GradeTooLowException("Form exception: Grade too low");
+		throw Form::GradeTooLowException();
 }
 
 Form::~Form(void)
@@ -18,9 +25,15 @@ Form::~Form(void)
 void Form::beSigned(const Bureaucrat & arg)
 {
 	if(arg.getGrade() <= this->_gradeToExecute)
+	{
 		this->_signedValue = true;
+		arg.signForm(this->_name,this->_signedValue);
+	}
 	else
-		this->_signedValue = false;
+	{
+		arg.signForm(this->_name,this->_signedValue);
+		throw Form::GradeTooLowException();
+	}
 }
 
 std::string Form::getName(void) const { return this->_name; };
@@ -31,24 +44,22 @@ int Form::getGradeToExecute(void) const { return this->_gradeToExecute; };
 
 int Form::getGradeToSigne(void) const { return this->_gradeToSigne; };
 
-Form::GradeTooHighException::GradeTooHighException(const std::string & msg): message(msg)
-{}
+Form::GradeTooHighException::GradeTooHighException(void) throw() {}
 
 Form::GradeTooHighException::~GradeTooHighException(void) throw() {} ;
 
 const char * Form::GradeTooHighException::what(void) const throw()
 {
-	return this->message.c_str();
+	return "Form exception: Grade too high";
 }
 
-Form::GradeTooLowException::GradeTooLowException(const std::string & msg): message(msg)
-{}
+Form::GradeTooLowException::GradeTooLowException(void) throw() {}
 
 Form::GradeTooLowException::~GradeTooLowException(void) throw() {} ;
 
 const char * Form::GradeTooLowException::what(void) const throw()
 {
-	return this->message.c_str();
+	return "Form exception: Grade too low";
 }
 
 std::ostream &operator<<(std::ostream & stream, const Form & arg)
