@@ -1,4 +1,4 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 
 AForm::AForm(const AForm & cpy)
 : _name(cpy.getName()),_signedValue(cpy.getSignedValue()),
@@ -7,8 +7,8 @@ _gradeToExecute(cpy.getGradeToExecute()),_gradeToSigne(cpy.getGradeToSigne())
 	std::cout << OPERATOR_EQUAL_FORM << std::endl;
 }
 
-AForm::AForm(const std::string & name , const int & gradeToExecute ,const int & gradeToSigne)
-:_name(name),_signedValue(false),_gradeToExecute(gradeToExecute),_gradeToSigne(gradeToSigne)
+AForm::AForm(const std::string & name ,const std::string & target,const int & gradeToExecute ,const int & gradeToSigne)
+:_name(name),_target(target),_signedValue(false),_gradeToExecute(gradeToExecute),_gradeToSigne(gradeToSigne)
 {
 	std::cout << CONSTRUCTOR_FORM << std::endl;
 	if(gradeToSigne <= 0 || gradeToExecute <= 0)
@@ -37,6 +37,8 @@ void AForm::beSigned(const Bureaucrat & arg)
 }
 
 std::string AForm::getName(void) const { return this->_name; };
+
+std::string AForm::getTarget(void) const { return this->_target; };
 
 bool AForm::getSignedValue(void) const { return this->_signedValue; };
 

@@ -4,12 +4,17 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <fstream>
+
+#include "AForm.hpp"
 
 #define DEFAULT_CONSTRUCTOR_BUREAUCRAT "Default Constructor Bureaucrat Called"
 #define CONSTRUCTOR_BUREAUCRAT "Constructor Bureaucrat Called"
 #define COPY_CONSTRUCTOR_BUREAUCRAT "Copy Constructor Bureaucrat Called"
 #define DESTRUCTOR_BUREAUCRAT "Destructor Bureaucrat Called"
 #define OPERATOR_EQUAL_BUREAUCRAT "Operator '=' Bureaucrat Called"
+
+class AForm;
 
 class Bureaucrat
 {
@@ -28,6 +33,8 @@ class Bureaucrat
         int getGrade(void) const;
 
         void signForm(const std::string &name,bool & signed_value) const;
+
+        void executeForm(AForm const & form);
 
         class GradeTooHighException: public std::exception
         {

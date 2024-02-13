@@ -1,24 +1,26 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 #define SHRUBBERYCREATIONFORM_HPP
 
-#include "Form.hpp"
+#include "AForm.hpp"
+#include <iostream>
 
-#define DEFAULT_CONSTRUCTOR_SHRUBBERY "Default Constructor Shrubbery Called"
+#define GRADE_TO_SIGN_SHRUBBERYCREATIONFORM 145
+#define GRADE_TO_EXEC_SHRUBBERYCREATIONFORM 137
 
-#define GRADE_TO_SIGN_SHRUBBERY 145
-#define GRADE_TO_EXEC_SHRUBBERY 137
+#define DEFAULT_CONSTRUCTOR_SHRUBBERYCREATIONFORM "Default Constructor ShrubberyCreationForm Called"
+#define CONSTRUCTOR_SHRUBBERYCREATIONFORM "Constructor ShrubberyCreationForm Called"
+#define COPY_CONSTRUCTOR_SHRUBBERYCREATIONFORM "Copy Constructor ShrubberyCreationForm Called"
+#define DESTRUCTOR_SHRUBBERYCREATIONFORM "Destructor ShrubberyCreationForm Called"
+#define OPERATOR_EQUAL_SHRUBBERYCREATIONFORM "Operator equal ShrubberyCreationForm Called"
 
 class ShrubberyCreationForm: public AForm
 {
 	public:
-		ShrubberyCreationForm(void);
+		ShrubberyCreationForm(const std::string & target);
 		~ShrubberyCreationForm(void);
 
-		void beSigned(const Bureaucrat & arg);
-		std::string getName(void) const;
-		bool getSignedValue(void) const;
-		int getGradeToExecute(void) const;
-		int getGradeToSigne(void) const;
+		void execute(Bureaucrat const & executor) const;
+
 };
 
 #endif

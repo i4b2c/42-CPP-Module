@@ -20,6 +20,11 @@ void Bureaucrat::signForm(const std::string &name, bool &signedValue) const
         << " because not enough grade" << std::endl;
 }
 
+void Bureaucrat::executeForm(AForm const & form)
+{
+    form.execute(*this);
+}
+
 //Constructor
 Bureaucrat::Bureaucrat(void)
 {

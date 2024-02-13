@@ -7,8 +7,10 @@ CXX = c++
 #ARQUIVOS
 SRCS =	main.cpp \
 		Bureaucrat.cpp \
-		Form.cpp \
-		ShrubberyCreationForm.cpp
+		AForm.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

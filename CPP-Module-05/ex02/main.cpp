@@ -1,12 +1,19 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
     {
         try
         {
-            ShrubberyCreationForm Teste;
+            Bureaucrat Student("icaldas",97);
+            ShrubberyCreationForm Shrubbery("icaldas");
+            // RobotomyRequestForm Robotomy("Robotomy");
+            // PresidentialPardonForm President("President");
+            Shrubbery.beSigned(Student);
+            Student.executeForm(Shrubbery);
         }
         catch(std::exception & e)
         {

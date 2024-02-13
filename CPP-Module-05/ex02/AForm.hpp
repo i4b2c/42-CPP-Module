@@ -9,24 +9,30 @@
 #define DESTRUCTOR_FORM "Destructor Form Called"
 #define OPERATOR_EQUAL_FORM "Operator '=' Bureaucrat Called"
 
+class Bureaucrat;
+
 class AForm
 {
 	private:
 		const std::string	_name;
+		const std::string	_target;
 		bool				_signedValue;
 		const int			_gradeToExecute;
 		const int			_gradeToSigne;
 	public:
-		AForm(const std::string & name , const int & grade ,const int & gradeToSigne);
+		AForm(const std::string & name, const std::string & target, const int & grade ,const int & gradeToSigne);
 		AForm(const AForm & cpy);
-		~AForm(void);
+		virtual ~AForm(void);
 
-		virtual void beSigned(const Bureaucrat & arg) = 0;
+		void beSigned(const Bureaucrat & arg);
 
-		virtual std::string getName(void) const = 0;
-		virtual bool getSignedValue(void) const = 0;
-		virtual int getGradeToExecute(void) const = 0;
-		virtual int getGradeToSigne(void) const = 0;
+		std::string getName(void) const;
+		std::string getTarget(void) const;
+		bool getSignedValue(void) const;
+		int getGradeToExecute(void) const;
+		int getGradeToSigne(void) const;
+
+		virtual void execute(Bureaucrat const & executor) const = 0;
 
 		//Class
 		class GradeTooHighException: public std::exception
