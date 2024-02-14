@@ -18,18 +18,18 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		std::cout << "Created file " << this->getTarget() << "_shrubbery" << std::endl;
 		std::ofstream fileToOpen;
 		fileToOpen.open((this->getTarget() + "_shrubbery").c_str());
-		fileToOpen <<	"       &&& &&  & &&" << std::endl;
+		fileToOpen <<	"       &&&^&&()&*^&&" << std::endl;
 		fileToOpen <<	"    && &&^&^^& ()|/ @, &&" << std::endl;
-		fileToOpen <<	"   &&^(/&/&||/& /_/)_&/_&" << std::endl;
-		fileToOpen <<	"  &() &&^&|()|/&&^ '% & &&^^ " << std::endl;
-		fileToOpen <<	"&_&^^_&&_&^ |& |&&/&__%_/_& &&" << std::endl;
-		fileToOpen <<	"&&   && & &| &| /& & % ()& /&&" << std::endl;
+		fileToOpen <<	"   &&^(/&/&||/& /_/)_&/_&&*" << std::endl;
+		fileToOpen <<	"  &() &&^&|()|/&&^ '% & &&^^*" << std::endl;
+		fileToOpen <<	"&_&^^_&&_&^ |&()|&&/&__%_/_&&&" << std::endl;
+		fileToOpen <<	"&&^^*&& & &| &| /& & % ()& /&&" << std::endl;
 		fileToOpen <<	" ()&_---()&&^^*&&-&&--%---()~" << std::endl;
-		fileToOpen <<	"     &&     |||" << std::endl;
+		fileToOpen <<	"     &&     |||     &-&" << std::endl;
 		fileToOpen <<	"            |||" << std::endl;
 		fileToOpen <<	"            |||" << std::endl;
 		fileToOpen <<	"            |||" << std::endl;
-		fileToOpen <<	"    , -=-~  .-^- _" << std::endl;
+		fileToOpen <<	"    , -=-~--.-^- _" << std::endl;
 		fileToOpen.close();
 	}
 	else
