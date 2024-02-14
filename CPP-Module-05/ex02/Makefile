@@ -31,4 +31,7 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
+extra:
+	$(RM) *_shrubbery
+
 re: fclean all

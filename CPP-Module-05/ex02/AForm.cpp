@@ -4,13 +4,13 @@ AForm::AForm(const AForm & cpy)
 : _name(cpy.getName()),_signedValue(cpy.getSignedValue()),
 _gradeToExecute(cpy.getGradeToExecute()),_gradeToSigne(cpy.getGradeToSigne())
 {
-	std::cout << OPERATOR_EQUAL_FORM << std::endl;
+	// std::cout << OPERATOR_EQUAL_FORM << std::endl;
 }
 
 AForm::AForm(const std::string & name ,const std::string & target,const int & gradeToExecute ,const int & gradeToSigne)
 :_name(name),_target(target),_signedValue(false),_gradeToExecute(gradeToExecute),_gradeToSigne(gradeToSigne)
 {
-	std::cout << CONSTRUCTOR_FORM << std::endl;
+	// std::cout << CONSTRUCTOR_FORM << std::endl;
 	if(gradeToSigne <= 0 || gradeToExecute <= 0)
 		throw AForm::GradeTooHighException();
 	else if(gradeToSigne > 150 || gradeToExecute > 150)
@@ -19,7 +19,7 @@ AForm::AForm(const std::string & name ,const std::string & target,const int & gr
 
 AForm::~AForm(void)
 {
-	std::cout << DESTRUCTOR_FORM << std::endl;
+	// std::cout << DESTRUCTOR_FORM << std::endl;
 }
 
 void AForm::beSigned(const Bureaucrat & arg)

@@ -19,7 +19,7 @@ class PresidentialPardonForm: public AForm
 		PresidentialPardonForm(const std::string & target);
 		~PresidentialPardonForm(void);
 
-		// void execute(Bureaucrat const & executor) const;
+		void execute(Bureaucrat const & executor) const;
 };
 
 #endif

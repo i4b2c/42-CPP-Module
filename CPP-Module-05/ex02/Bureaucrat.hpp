@@ -5,6 +5,8 @@
 #include <string>
 #include <exception>
 #include <fstream>
+#include <time.h>
+#include <cstdlib>
 
 #include "AForm.hpp"
 

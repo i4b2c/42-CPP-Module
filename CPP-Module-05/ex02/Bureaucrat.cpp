@@ -28,12 +28,12 @@ void Bureaucrat::executeForm(AForm const & form)
 //Constructor
 Bureaucrat::Bureaucrat(void)
 {
-    std::cout << DEFAULT_CONSTRUCTOR_BUREAUCRAT << std::endl;
+    // std::cout << DEFAULT_CONSTRUCTOR_BUREAUCRAT << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string name,const int grade): name(name)
 {
-    std::cout << CONSTRUCTOR_BUREAUCRAT << std::endl;
+    // std::cout << CONSTRUCTOR_BUREAUCRAT << std::endl;
     if(grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if(grade > 150)
@@ -44,13 +44,13 @@ Bureaucrat::Bureaucrat(const std::string name,const int grade): name(name)
 
 Bureaucrat::Bureaucrat(const Bureaucrat & cpy): name(cpy.getName()), grade(cpy.getGrade())
 {
-    std::cout << COPY_CONSTRUCTOR_BUREAUCRAT << std::endl;
+    // std::cout << COPY_CONSTRUCTOR_BUREAUCRAT << std::endl;
 }
 
 //Destructor
 Bureaucrat::~Bureaucrat(void)
 {
-    std::cout << DESTRUCTOR_BUREAUCRAT << std::endl;
+    // std::cout << DESTRUCTOR_BUREAUCRAT << std::endl;
 }
 
 //operator
@@ -58,7 +58,7 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat & cpy)
 {
     const_cast<std::string &>(this->name) = cpy.getName();
     this->grade = cpy.getGrade();
-    std::cout << OPERATOR_EQUAL_BUREAUCRAT << std::endl;
+    // std::cout << OPERATOR_EQUAL_BUREAUCRAT << std::endl;
     return *this;
 }
 
