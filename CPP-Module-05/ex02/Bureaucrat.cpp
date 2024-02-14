@@ -22,7 +22,13 @@ void Bureaucrat::signForm(const std::string &name, bool &signedValue) const
 
 void Bureaucrat::executeForm(AForm const & form)
 {
-    form.execute(*this);
+    if(form.getSignedValue())
+    {
+        std::cout << this->name << " executed " << form.getName() << std::endl;
+        form.execute(*this);
+    }
+    else
+        std::cout << form.getName() << " isn't signed yet." << std::endl;
 }
 
 //Constructor

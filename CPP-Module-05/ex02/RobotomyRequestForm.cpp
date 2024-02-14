@@ -13,11 +13,16 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	std::cout << "Bzzzzzzzzzzzzzzz" << std::endl;
-	std::srand(time(0));
-	int numRandom = std::rand() % 2;
-	if(numRandom)
-		std::cout << executor.getName() << " has been robotomized successfully" << std::endl;
+	if(executor.getGrade() <= this->getGradeToExecute())
+	{
+		std::cout << "Bzzzzzzzzzzzzzzz" << std::endl;
+		std::srand(time(0));
+		int numRandom = std::rand() % 2;
+		if(numRandom)
+			std::cout << executor.getName() << " has been robotomized successfully" << std::endl;
+		else
+			std::cout << "robotomy on " << executor.getName() << " failed" << std::endl;
+	}
 	else
-		std::cout << "robotomy on " << executor.getName() << " failed" << std::endl;
+		throw RobotomyRequestForm::AForm::GradeTooLowException();
 }

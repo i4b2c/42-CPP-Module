@@ -13,9 +13,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	if(!this->getSignedValue())
-		std::cout << "Not signed yet" << std::endl;
-	else if(executor.getGrade() <= this->getGradeToExecute())
+	if(executor.getGrade() <= this->getGradeToExecute())
 	{
 		std::cout << "Created file " << this->getTarget() << "_shrubbery" << std::endl;
 		std::ofstream fileToOpen;
