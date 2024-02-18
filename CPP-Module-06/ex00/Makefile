@@ -5,7 +5,8 @@ NAME = convert
 CXX = c++
 
 #ARQUIVOS
-SRCS = ScalarConverte.cpp \
+SRCS =	ScalarConverte.cpp \
+		converteFunctions.cpp \
 		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
