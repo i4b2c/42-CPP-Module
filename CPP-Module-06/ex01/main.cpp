@@ -22,6 +22,7 @@ int	main(int ac, char **av)
 
 	std::cout << std::string(15,'-') << "Uintptr_t" << std::string(16,'-') << std::endl;
 	std::cout << "uintptr_t data: " << ptr << std::endl;
+	std::cout << "uintptr_t data in hex: 0x" << std::hex << ptr << std::endl;
 	std::cout << std::string(40,'-') << std::endl << std::endl;
 	
 	std::cout << std::string(12,'-') << "Deserialize Data" << std::string(12,'-') << std::endl;
