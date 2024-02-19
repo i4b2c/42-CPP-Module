@@ -2,6 +2,8 @@
 #define BASE_HPP
 
 #include <iostream>
+#include <cstdlib>
+#include <stdint.h>
 
 #define DEFAULT_CONSTRUCTOR_BASE "Default Constructor Base Called"
 #define CONSTRUCTOR_BASE "Constructor Base Called"

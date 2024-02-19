@@ -10,15 +10,6 @@
 #define DESTRUCTOR_A "Destructor A Called"
 #define OPERATOR_EQUAL_A "Operator equal A Called"
 
-class A: public Base
-{
-	public:
-		A(void);
-};
-
-A::A(void)
-{
-	std::cout << DEFAULT_CONSTRUCTOR_A << std::endl;
-}
+class A: public Base {};
 
 #endif
