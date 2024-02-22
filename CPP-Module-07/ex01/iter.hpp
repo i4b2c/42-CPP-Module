@@ -1,9 +1,8 @@
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
 #include <iostream>
 
-//example of function
 template <typename T>
 void functionAddOne(T num)
 {
@@ -21,6 +20,5 @@ void print_array(T (& array)[N], size_t length, void (*func)(T &))
 		i++;
 	}
 }
-
 
 #endif
