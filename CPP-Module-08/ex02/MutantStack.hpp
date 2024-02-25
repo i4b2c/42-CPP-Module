@@ -3,35 +3,33 @@
 
 #include <stack>
 
-// #ifndef DEBUG_MODE
-// # define DEBUG_MODE 1
-// #endif // DEBUG_MODE
+#ifndef DEBUG_MODE
+# define DEBUG_MODE 1
+#endif // DEBUG_MODE
 
 template <typename T>
 class MutantStack: public std::stack<T>
 {
 	public:
 		MutantStack();
-		~MutantStack();
-		
-		typedef typename std::stack<T>::container_type Container;
+		MutantStack(const MutantStack<T> & cpy);
+		virtual ~MutantStack();
+		MutantStack<T> &operator=(const MutantStack<T> & cpy);
 
-		typedef typename Container::iterator iterator;
+		typedef typename std::stack<T>::container_type		Container;
+		typedef typename Container::iterator				iterator;
+		typedef typename Container::reverse_iterator		reverse_iterator;
+		typedef typename Container::const_iterator			const_iterator;
+		typedef typename Container::const_reverse_iterator	const_reverse_iterator;
 
 		iterator begin();
 		iterator end();
 
-		typedef typename Container::reverse_iterator reverse_iterator;
-
 		reverse_iterator rbegin();
 		reverse_iterator rend();
 
-		typedef typename Container::const_iterator const_iterator;
-
 		const_iterator cbegin();
 		const_iterator cend();
-
-		typedef typename Container::const_reverse_iterator const_reverse_iterator;
 
 		const_reverse_iterator crbegin();
 		const_reverse_iterator crend();
@@ -41,8 +39,30 @@ template<typename T>
 MutantStack<T>::MutantStack(void)
 {
 	#ifdef DEBUG_MODE
-	std::cout << "MutantStack constructor called" << std::endl;
+	std::cout << "MutantStack default constructor called" << std::endl;
 	#endif	
+}
+
+template<typename T>
+MutantStack<T>::MutantStack(const MutantStack<T> & cpy)
+: std::stack<T>(cpy)
+{
+	#ifdef DEBUG_MODE
+	std::cout << "MurantStack copy constructor called" << std::endl;
+	#endif
+}
+
+template<typename T>
+MutantStack<T> & MutantStack<T>::operator=(const MutantStack<T> & cpy)
+{
+	if(*this == &cpy)
+		return *this;
+	#ifdef DEBUG_MODE
+	std::cout << "MurantStack equal operator called" << std::endl;
+	#endif
+	this->c = cpy.c;
+	return *this;
+
 }
 
 template<typename T>

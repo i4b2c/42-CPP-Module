@@ -81,6 +81,70 @@ int main(void)
 			std::cout << *crit << std::endl;
 			crit++;
 		}
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "Testing overload operators" << std::endl << std::endl;
+		MutantStack<int> test;
+		test.push(10);
+		test.push(20);
+		test.push(30);
+		test.push(40);
+
+		MutantStack<int> test_cpy(test);
+		MutantStack<int>::iterator it,itn;
+
+		test.push(50);
+
+		it = test_cpy.begin();
+		itn = test_cpy.end();
+		while(it != itn)
+		{
+			std::cout << *it << std::endl;
+			it++;
+		}
+
+		std::cout << std::endl;
+
+		it = test.begin();
+		itn = test.end();
+		while(it != itn)
+		{
+			std::cout << *it << std::endl;
+			it++;
+		}
+		std::cout << std::endl;
+	}
+	{
+		std::cout << "Testing equal operator" << std::endl << std::endl;
+		MutantStack<int> test;
+		test.push(10);
+		test.push(20);
+		test.push(30);
+		test.push(40);
+
+		MutantStack<int> test_cpy = test;
+		MutantStack<int>::iterator it,itn;
+
+		test.push(50);
+
+		it = test_cpy.begin();
+		itn = test_cpy.end();
+		while(it != itn)
+		{
+			std::cout << *it << std::endl;
+			it++;
+		}
+
+		std::cout << std::endl;
+
+		it = test.begin();
+		itn = test.end();
+		while(it != itn)
+		{
+			std::cout << *it << std::endl;
+			it++;
+		}
 	}
 	return EXIT_SUCCESS;
 }
