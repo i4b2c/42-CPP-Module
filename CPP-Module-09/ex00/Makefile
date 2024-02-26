@@ -5,7 +5,8 @@ NAME=btc
 CXX=c++
 
 # ARQUIVOS
-SRCS= main.cpp
+SRCS= main.cpp \
+		BitcoinExchange.cpp
 
 OBJS=$(SRCS:.cpp=.o)
 
