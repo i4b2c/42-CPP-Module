@@ -53,5 +53,8 @@ void RPN::RPNCalc(std::string & arg)
 				calc(teste,line.at(0));
 		}
 	}
-	std::cout << teste.top() << std::endl;
+	if(teste.size() != 1)
+		std::cout << "Error" << std::endl;
+	else
+		std::cout << teste.top() << std::endl;
 }
