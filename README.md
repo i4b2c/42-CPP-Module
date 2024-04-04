@@ -6,7 +6,6 @@
   <summary><b>Ex 00</b></summary>
     
   - <b>Objectives</b>
-  - <details>
     <summary><b>Basic ostream</b></summary>
       <br>std::cout (Console Output) to sends formatted output to stdout.
 
@@ -21,14 +20,12 @@
     Useful Links:
   
     https://cplusplus.com/reference/iostream/cout/
-    </details>
   </details>
 
 <details>
   <summary><b>Ex 01</b></summary>
 
   - <b>Objectives</b>
-  - <details>
     <summary><b>Basic istream</b></summary>
       <br>std::cin (Console Input) used to get user input from an external source.
   
@@ -48,8 +45,6 @@
     Useful Links:
   
     https://cplusplus.com/reference/iostream/cin/
-    </details>
-  - <details>
     <summary><b>Basic string</b></summary>
       <br>std::string is a class that defines objects that be represented as a stream of characters. 
   
@@ -66,8 +61,6 @@
   
   
     https://cplusplus.com/reference/string/string/ 
-    </details>
-  - <details>
     <summary><b>How to use the setw() function</b></summary>
       <br>std::setw used to sets the ios library field width or specifies the minimum number of character positions a variable will consume.
   
@@ -84,14 +77,12 @@
     Useful Links:
   
     https://cplusplus.com/reference/iomanip/ 
-    </details>
 </details>
 
 <details>
   <summary><b>Ex 02</b></summary>
   
   - <b>Objectives</b>
-  - <details>
     <summary><b>Constructor and Destructor</b></summary>
       <br>Constructors and destructors are special member functions of classes that are used to construct and destroy class objects
   
@@ -130,8 +121,6 @@
     Useful Links:
   
     https://www.codementor.io/@supernerdd7/constructor-and-destructor-in-c-1r8kkogm6j 
-    </details>
-  - <details>
     <summary><b>Classes</b></summary>
       <br>A class is a user-defined data type that we can use in our program 
   
@@ -157,8 +146,6 @@
     Useful Links:
   
     https://www.programiz.com/cpp-programming/object-class
-    </details>
-  - <details>
     <summary><b>std::time</b></summary>
       <br>std::time returns the current calendar time as an object of type time_t
   
@@ -179,5 +166,4 @@
     Useful Links:
   
     https://cplusplus.com/reference/ctime/time/ 
-    </details>
 </details>
