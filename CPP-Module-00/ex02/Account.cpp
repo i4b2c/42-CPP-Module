@@ -118,10 +118,10 @@ void Account::_displayTimestamp(void)
 
 	localTime = std::localtime(&time);
 	std::cout	<< '[' \
-				<< (localTime->tm_year + 1900) \
-				<< (localTime->tm_mon + 1) \
-				<< localTime->tm_mday \
-				<< "_" \
+				<< (localTime->tm_year + 1900);
+				(localTime->tm_mon + 1 < 10) ? (std::cout << "0" << (localTime->tm_mon + 1)) : (std::cout << (localTime->tm_mon + 1));
+				(localTime->tm_mday < 10) ? (std::cout << "0" << (localTime->tm_mday)) : (std::cout << (localTime->tm_mday + 1));
+				std::cout << "_" \
 				<< localTime->tm_hour \
 				<< localTime->tm_min \
 				<< localTime->tm_sec \

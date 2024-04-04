@@ -9,7 +9,7 @@ SRCS =	megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 #FLAGS
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 #COMANDOS
 RM = rm -rf
@@ -17,7 +17,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
