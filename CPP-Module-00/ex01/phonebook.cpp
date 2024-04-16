@@ -10,7 +10,7 @@ using std::endl;
 void PhoneBook::addContact(void)
 {
 	if(this->number_contacts >= NUM_MAX_CONTACTS)
-		this->number_contacts = NUM_MAX_CONTACTS - 1;
+		this->number_contacts = 0;
 	this->contacts[number_contacts].setInfo();
 	this->number_contacts += 1;
 }
