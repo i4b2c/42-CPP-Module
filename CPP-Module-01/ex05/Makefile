@@ -5,8 +5,8 @@ NAME = harl
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/Harl.cpp
+SRCS =	main.cpp \
+	Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

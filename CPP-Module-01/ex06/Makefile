@@ -1,12 +1,12 @@
 #PROGRAM NAME
-NAME = harl
+NAME = harlFilter
 
 #PROGRAMMING LANGUAGE
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/Harl.cpp
+SRCS =	main.cpp \
+		Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

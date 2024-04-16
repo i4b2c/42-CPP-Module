@@ -1,7 +1,16 @@
-#include "../include/Harl.hpp"
+#include "Harl.hpp"
 
 int getIndexLevel(const std::string level)
 {
+	std::string levels_temp[] = {"DEBUG","INFO","WARNING","ERROR"};
+	size_t i;
+	for(i = 0; i < 4; ++i)
+	{
+		if(level == levels_temp[i])
+			break;
+	}
+	return i;
+	/*
 	if(level == "DEBUG")
 		return 0;
 	else if(level == "INFO")
@@ -10,7 +19,7 @@ int getIndexLevel(const std::string level)
 		return 2;
 	else if(level == "ERROR")
 		return 3;
-	return 4;
+	return 4;*/
 }
 
 void Harl::complain(std::string level)
