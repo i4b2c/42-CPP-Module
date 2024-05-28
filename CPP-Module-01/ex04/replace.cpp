@@ -6,11 +6,16 @@ void copyToString(std::string avString[],char **av, int ac)
 		avString[i] = av[i];
 }
 
-int checkSyntax(int ac)
+int checkSyntax(int ac,char **av)
 {
 	if(ac != 4)
 	{
 		std::cerr << E_SYNTAX << std::endl;
+		return (EXIT_FAILURE);
+	}
+	else if(!av[2][0] || !av[3][0])
+	{
+		std::cerr << E_PARAM << std::endl;
 		return (EXIT_FAILURE);
 	}
 	return EXIT_SUCCESS;

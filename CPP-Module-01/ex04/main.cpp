@@ -6,7 +6,7 @@ int main(int ac, char **av)
 	std::ifstream openFile;
 	std::ofstream openFileReplace;
 
-	if(checkSyntax(ac) == EXIT_FAILURE)
+	if(checkSyntax(ac,av) == EXIT_FAILURE)
 		return EXIT_FAILURE;
 	copyToString(avString,av,ac);
 	if(openFiles(avString,openFile,openFileReplace) == EXIT_FAILURE)
