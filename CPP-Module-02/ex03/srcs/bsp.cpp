@@ -2,7 +2,7 @@
 
 float area(const Point &a,const Point &b, const Point &c)
 {
-	float num = 0.5 * roundf(a.xToFloat() * (b.yToFloat() - c.yToFloat())
+	float num = 0.5 * (a.xToFloat() * (b.yToFloat() - c.yToFloat())
     + b.xToFloat() * (c.yToFloat() - a.yToFloat())
     + c.xToFloat() * (a.yToFloat() - b.yToFloat()));
 	if(num < 0)

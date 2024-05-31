@@ -4,6 +4,8 @@
 # include <iostream>
 # include <bits/stdc++.h>
 
+#define DEBUG_MSG 1
+
 class Fixed {
 	private:
 		int value;

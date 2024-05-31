@@ -2,21 +2,27 @@
 
 Fixed &Fixed::operator=(const Fixed &fixedToCopy)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->setRawBits(fixedToCopy.getRawBits());
+	#endif
+	this->setRawBits(fixedToCopy.value);
 	return *this;
 }
 
 Fixed::Fixed(void)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Default constructor called" << std::endl;
+	#endif
 	this->value = 0b0;
 }
 
 Fixed::Fixed(const Fixed &fixedToCopy)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Copy constructor called" << std::endl;
-	this->setRawBits(fixedToCopy.getRawBits());
+	#endif
+	this->setRawBits(fixedToCopy.value);
 	*this = fixedToCopy;
 }
 
@@ -33,18 +39,24 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::~Fixed(void)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Destructor called" << std::endl;
+	#endif
 }
 
 Fixed::Fixed(const int raw)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Int constructor called" << std::endl;
+	#endif
 	this->setRawBits(raw * (1 << Fixed::numBits));
 }
 
 Fixed::Fixed(const float raw)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Float constructor called" << std::endl;
+	#endif
 	this->setRawBits(roundf(raw * (1 << Fixed::numBits)));
 }
 

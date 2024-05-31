@@ -5,6 +5,8 @@
 #include <cmath>
 #include <bits/stdc++.h>
 
+#define DEBUG_MSG 0
+
 class Fixed {
 	private:
 		int value;

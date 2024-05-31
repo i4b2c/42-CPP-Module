@@ -16,12 +16,8 @@ Fixed Point::returnY(void) const { return this->y; };
 
 Point &Point::operator=(const Point &copyPoint)
 {
-	Point temp(copyPoint.x.toFloat(), copyPoint.y.toFloat());
-
-	//uso const_cast para "remover" temporariamente o const do <Fixed>
-	//e assim mudar o valor
-	const_cast<Fixed&>(this->x) = temp.returnX();
-	const_cast<Fixed&>(this->y) = temp.returnY();
+	const_cast<Fixed&>(this->x) = copyPoint.x;
+	const_cast<Fixed&>(this->y) = copyPoint.y;
 
 	return *this;
 }
@@ -29,22 +25,30 @@ Point &Point::operator=(const Point &copyPoint)
 Point::Point()
 : x(0), y(0)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Default Constructor Called" << std::endl;
+	#endif
 };
 
 Point::Point(Point const &arg): x(arg.returnX()) , y(arg.returnY())
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Constructor Called" << std::endl;
+	#endif
 }
 
 Point::Point(const float xNum, const float yNum): x(xNum), y(yNum)
 {
+	#if DEBUG_MSG == 1
 	std::cout << "Constructor Called" << std::endl;
+	#endif
 };
 
 Point::~Point()
 {
-	std::cout << "Default Destructor Called" << std::endl;
+	#if DEBUG_MSG == 1
+	std::cout << "Point Destructor Called" << std::endl;
+	#endif
 };
 
 std::ostream &operator<<(std::ostream &stream, const Point &point)

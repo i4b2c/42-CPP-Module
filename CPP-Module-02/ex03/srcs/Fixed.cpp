@@ -2,28 +2,28 @@
 
 Fixed &Fixed::max(Fixed &nb1, Fixed &nb2)
 {
-	if(nb1.getRawBits() > nb2.getRawBits())
+	if(nb1.value > nb2.value)
 		return nb1;
 	return nb2;
 }
 
 const Fixed &Fixed::max(const Fixed &nb1,const Fixed &nb2)
 {
-	if(nb1.getRawBits() > nb2.getRawBits())
+	if(nb1.value > nb2.value)
 		return nb1;
 	return nb2;
 }
 
 Fixed &Fixed::min(Fixed &nb1, Fixed &nb2)
 {
-	if(nb1.getRawBits() > nb2.getRawBits())
+	if(nb1.value > nb2.value)
 		return nb1;
 	return nb2;
 }
 
 const Fixed &Fixed::min(const Fixed &nb1,const Fixed &nb2)
 {
-	if(nb1.getRawBits() > nb2.getRawBits())
+	if(nb1.value > nb2.value)
 		return nb1;
 	return nb2;
 }
@@ -98,7 +98,6 @@ bool Fixed::operator!=(const Fixed &nbr)
 
 bool Fixed::operator==(const Fixed &nbr)
 {
-	std::cout << "operacao == feita" << std::endl;
 	if(this->toFloat() == nbr.toFloat())
 		return true;
 	return false;
@@ -106,21 +105,27 @@ bool Fixed::operator==(const Fixed &nbr)
 
 Fixed &Fixed::operator=(const Fixed &fixedToCopy)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	#if DEBUG_MSG == 1
+	std::cout << "Fixed copy assignment operator called" << std::endl;
+	#endif
 	this->setRawBits(fixedToCopy.value);
 	return *this;
 }
 
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	#if DEBUG_MSG == 1
+	std::cout << "Fixed default constructor called" << std::endl;
+	#endif
 	this->value = 0b0;
 }
 
 Fixed::Fixed(const Fixed &fixedToCopy)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	this->setRawBits(fixedToCopy.getRawBits());
+	#if DEBUG_MSG == 1
+	std::cout << "Fixed copy constructor called" << std::endl;
+	#endif
+	this->setRawBits(fixedToCopy.value);
 	*this = fixedToCopy;
 }
 
@@ -137,18 +142,24 @@ void Fixed::setRawBits(int const raw)
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	#if DEBUG_MSG == 1
+	std::cout << "Fixed Destructor called" << std::endl;
+	#endif
 }
 
 Fixed::Fixed(const int raw)
 {
-	std::cout << "Int constructor called" << std::endl;
+	#if DEBUG_MSG == 1
+	std::cout << "Fixed int constructor called" << std::endl;
+	#endif
 	this->setRawBits(raw * (1 << Fixed::numBits));
 }
 
 Fixed::Fixed(const float raw)
 {
-	std::cout << "Float constructor called" << std::endl;
+	#if DEBUG_MSG == 1
+	std::cout << "Fixed float constructor called" << std::endl;
+	#endif
 	this->setRawBits(roundf(raw * (1 << Fixed::numBits)));
 }
 
