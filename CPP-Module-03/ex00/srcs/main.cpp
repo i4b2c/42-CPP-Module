@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	ClapTrap defaultTrap;
+	ClapTrap defaultTrap("Default");
 	ClapTrap robo("Traigu");
 
 	robo.attack("defaultTrap");
