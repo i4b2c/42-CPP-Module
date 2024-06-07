@@ -1,4 +1,4 @@
-#include "../include/Fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed(void)
 {
@@ -25,19 +25,19 @@ Fixed &Fixed::operator=(const Fixed &fixedToCopy)
 	return *this;
 }
 
+Fixed::~Fixed(void)
+{
+	#if DEBUG_MSG == 1
+	std::cout << "Destructor called" << std::endl;
+	#endif
+}
+
 int Fixed::getRawBits(void) const
 {
 	#if DEBUG_MSG == 1
 	std::cout << "getRawBits member function called" << std::endl;
 	#endif
 	return this->value;
-}
-
-Fixed::~Fixed(void)
-{
-	#if DEBUG_MSG == 1
-	std::cout << "Destructor called" << std::endl;
-	#endif
 }
 
 void Fixed::setRawBits(int const raw)

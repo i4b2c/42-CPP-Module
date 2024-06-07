@@ -1,4 +1,4 @@
-#include "../include/Fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed &Fixed::operator=(const Fixed &fixedToCopy)
 {
@@ -26,17 +26,6 @@ Fixed::Fixed(const Fixed &fixedToCopy)
 	*this = fixedToCopy;
 }
 
-
-int Fixed::getRawBits(void) const
-{
-	return this->value;
-}
-
-void Fixed::setRawBits(int const raw)
-{
-	this->value = raw;
-}
-
 Fixed::~Fixed(void)
 {
 	#if DEBUG_MSG == 1
@@ -58,6 +47,16 @@ Fixed::Fixed(const float raw)
 	std::cout << "Float constructor called" << std::endl;
 	#endif
 	this->setRawBits(roundf(raw * (1 << Fixed::numBits)));
+}
+
+int Fixed::getRawBits(void) const
+{
+	return this->value;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->value = raw;
 }
 
 int Fixed::toInt(void) const

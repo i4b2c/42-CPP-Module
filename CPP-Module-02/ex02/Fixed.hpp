@@ -4,7 +4,7 @@
 # include <iostream>
 # include <bits/stdc++.h>
 
-#define DEBUG_MSG 1
+#define DEBUG_MSG 1 
 
 class Fixed {
 	private:
@@ -35,6 +35,8 @@ class Fixed {
 		Fixed operator*(const Fixed &nbr);
 		Fixed operator++(void);
 		Fixed operator++(int);
+		Fixed operator--(void);
+		Fixed operator--(int);
 		static Fixed &max(Fixed &nb1, Fixed &nb2);
 		static const Fixed &max(Fixed const &nb1, Fixed const &nb2);
 		static Fixed &min(Fixed &nb1, Fixed &nb2);

@@ -1,4 +1,4 @@
-#include "../include/Point.hpp"
+#include "Point.hpp"
 
 float Point::xToFloat(void) const
 {

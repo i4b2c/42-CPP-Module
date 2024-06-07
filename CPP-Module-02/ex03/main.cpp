@@ -1,5 +1,5 @@
-#include "../include/Fixed.hpp"
-#include "../include/Point.hpp"
+#include "Fixed.hpp"
+#include "Point.hpp"
 
 int main( void )
 {

@@ -5,10 +5,10 @@ NAME = fixed
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/Fixed.cpp \
-		srcs/Point.cpp \
-		srcs/bsp.cpp
+SRCS =	main.cpp \
+		Fixed.cpp \
+		Point.cpp \
+		bsp.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

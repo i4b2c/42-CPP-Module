@@ -1,4 +1,4 @@
-#include "../include/Point.hpp"
+#include "Point.hpp"
 
 float area(const Point &a,const Point &b, const Point &c)
 {
@@ -17,6 +17,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point)
 	float area2 = area(a,c,point);
 	float area3 = area(b,c,point);
 
+	if(area1 == 0 || area2 == 0 || area3 == 0)
+		return false;
 	if(areaTotal == (area1 + area2 + area3))
 		return true;
 	return false;

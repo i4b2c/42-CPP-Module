@@ -5,8 +5,8 @@ NAME = fixed
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/Fixed.cpp
+SRCS =	main.cpp \
+		Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

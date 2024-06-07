@@ -1,4 +1,4 @@
-#include "../include/Fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed &Fixed::max(Fixed &nb1, Fixed &nb2)
 {
@@ -16,14 +16,14 @@ const Fixed &Fixed::max(const Fixed &nb1,const Fixed &nb2)
 
 Fixed &Fixed::min(Fixed &nb1, Fixed &nb2)
 {
-	if(nb1.value > nb2.value)
+	if(nb1.value < nb2.value)
 		return nb1;
 	return nb2;
 }
 
 const Fixed &Fixed::min(const Fixed &nb1,const Fixed &nb2)
 {
-	if(nb1.value > nb2.value)
+	if(nb1.value < nb2.value)
 		return nb1;
 	return nb2;
 }
@@ -38,6 +38,19 @@ Fixed Fixed::operator++(int)
 {
 	Fixed temp(*this);
 	this->value += 1;
+	return temp;
+}
+
+Fixed Fixed::operator--(void)
+{
+	this->value -= 1;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+	this->value -= 1;
 	return temp;
 }
 
