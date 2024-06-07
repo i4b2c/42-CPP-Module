@@ -1,47 +1,40 @@
 #include "DiamondTrap.hpp"
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
 
 DiamondTrap::DiamondTrap(const std::string &name)
-: ScavTrap(name), FragTrap(name)
+: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
-    this->_AttackDamage = 
+    this->_name = name;
+    this->_hitPoints = FragTrap::DefaultHitPoints;
+    this->_EnergyPoints = ScavTrap::DefaultEnergyPoints;
+    this->_AttackDamage = FragTrap::DefaultAttackDamage;
+
+    #if DEBUG_MSG == 1
     std::cout << "DiamondTrap constructor called" << std::endl;
+    #endif
 }
 
-DiamondTrap::DiamondTrap(void): ScavTrap(), FragTrap()
+
+DiamondTrap::DiamondTrap(void)
+:ClapTrap("Default_clap_name"), FragTrap(),ScavTrap()
 {
-    this->_name = "Default_clap_name";
+    this->_name = "Default";
+    this->_hitPoints = FragTrap::DefaultHitPoints;
+    this->_EnergyPoints = ScavTrap::DefaultEnergyPoints;
+    this->_AttackDamage = FragTrap::DefaultAttackDamage;
+    #if DEBUG_MSG == 1
     std::cout << "Default DiamondTrap constructor called" << std::endl;
+    #endif
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
+    #if DEBUG_MSG == 1
     std::cout << "DiamondTrap destructor called" << std::endl;
-}
-
-std::string DiamondTrap::getDtName(void) const
-{
-	return this->getName();
-}
-
-int DiamondTrap::getDtHitPoints(void) const
-{
-	return this->getHitPoints();
-}
-
-int DiamondTrap::getDtEnergyPoints(void) const
-{
-	return this->getEnergyPoints();
-}
-
-int DiamondTrap::getDtAttackDamage(void) const
-{
-	return this->getAttackDamage();
+    #endif
 }
 
 void DiamondTrap::whoAmI(void)
 {
     std::cout << "Diamond trap real name : " << this->_name << std::endl \
-    << "Clap Trap name : " << this->getDtName() << std::endl;
+    << "Clap Trap name : " << this->ClapTrap::_name << std::endl;
 }

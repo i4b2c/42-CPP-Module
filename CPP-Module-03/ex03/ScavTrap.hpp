@@ -3,7 +3,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap
+class ScavTrap: virtual public ClapTrap
 {
 	public:
 		void attack(const std::string &target);
@@ -14,7 +14,9 @@ class ScavTrap: public ClapTrap
 		ScavTrap &operator=(ScavTrap const & arg);
 		~ScavTrap(void);
 
-		static const std::string defaultName;
+		static const int DefaultAttackDamage = 20;
+        static const int DefaultEnergyPoints = 50;
+        static const int DefaultHitPoints = 100;
 };
 
 #endif
