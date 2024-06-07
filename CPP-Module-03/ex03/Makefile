@@ -5,11 +5,11 @@ NAME = dt
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/ClapTrap.cpp \
-		srcs/ScavTrap.cpp \
-		srcs/FragTrap.cpp \
-		srcs/DiamondTrap.cpp 
+SRCS =	main.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
+		DiamondTrap.cpp 
 
 OBJS = $(SRCS:.cpp=.o)
 

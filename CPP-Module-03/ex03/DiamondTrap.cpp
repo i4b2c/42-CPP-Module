@@ -1,19 +1,18 @@
-#include "../include/DiamondTrap.hpp"
-#include "../include/FragTrap.hpp"
-#include "../include/ScavTrap.hpp"
+#include "DiamondTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
-DiamondTrap::DiamondTrap(const std::string &name): name(name)
+DiamondTrap::DiamondTrap(const std::string &name)
+: ScavTrap(name), FragTrap(name)
 {
+    this->_AttackDamage = 
     std::cout << "DiamondTrap constructor called" << std::endl;
-    this->setValue(name + "_clap_name",FragTrap::getFtHitPoints(),ScavTrap::getStEnergyPoints() \
-    ,FragTrap::getFtAttackDamage());
 }
 
-DiamondTrap::DiamondTrap(void): name("default")
+DiamondTrap::DiamondTrap(void): ScavTrap(), FragTrap()
 {
+    this->_name = "Default_clap_name";
     std::cout << "Default DiamondTrap constructor called" << std::endl;
-    this->setValue("default_clap_name",FragTrap::getFtHitPoints(),ScavTrap::getStEnergyPoints() \
-    ,FragTrap::getFtAttackDamage());
 }
 
 DiamondTrap::~DiamondTrap(void)
@@ -43,6 +42,6 @@ int DiamondTrap::getDtAttackDamage(void) const
 
 void DiamondTrap::whoAmI(void)
 {
-    std::cout << "Diamond trap real name : " << this->name << std::endl \
+    std::cout << "Diamond trap real name : " << this->_name << std::endl \
     << "Clap Trap name : " << this->getDtName() << std::endl;
 }

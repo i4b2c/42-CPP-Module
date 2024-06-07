@@ -5,8 +5,8 @@ NAME = ct
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/ClapTrap.cpp
+SRCS =	main.cpp \
+	ClapTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

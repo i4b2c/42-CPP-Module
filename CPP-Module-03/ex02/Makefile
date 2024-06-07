@@ -5,10 +5,10 @@ NAME = ft
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/ClapTrap.cpp \
-		srcs/ScavTrap.cpp \
-		srcs/FragTrap.cpp
+SRCS =	main.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

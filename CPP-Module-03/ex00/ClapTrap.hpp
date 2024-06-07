@@ -1,8 +1,10 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+
+#define DEBUG_MSG 1
 
 class ClapTrap
 {
@@ -15,14 +17,11 @@ class ClapTrap
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		std::string getName(void) const;
-		int getHitPoints(void) const;
-		int getEnergyPoints(void) const;
-		int getAttackDamage(void) const;
-		void setValue(std::string name, int Hit,int Energy, int Attack);
-		void setEnergyPoints(int num);
-		ClapTrap(const std::string &name);
 		ClapTrap(void);
+		ClapTrap(const std::string name);
+		ClapTrap(ClapTrap const & arg);
+		ClapTrap &operator=(ClapTrap const & arg);
 		~ClapTrap(void);
 };
+
 #endif
