@@ -5,7 +5,7 @@ Fixed::Fixed(void)
 	#if DEBUG_MSG == 1
 	std::cout << "Default constructor called" << std::endl;
 	#endif
-	this->value = 0b0;
+	this->value = 0;
 }
 
 Fixed::Fixed(const Fixed &fixedToCopy)

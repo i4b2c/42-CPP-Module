@@ -6,7 +6,7 @@ CXX = c++
 
 #ARQUIVOS
 SRCS =	main.cpp \
-		Fixed.cpp
+	Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
