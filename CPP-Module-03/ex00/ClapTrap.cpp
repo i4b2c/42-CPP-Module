@@ -50,7 +50,9 @@ ClapTrap::operator=(ClapTrap const & arg)
 void
 ClapTrap::attack(const std::string &target)
 {
-	if(this->_EnergyPoints > 0)
+	if(!this->_hitPoints)
+		std::cout << "ClapTrap " << this->_name << " can't attack while he's dead" << std::endl;
+	else if(this->_EnergyPoints > 0)
 	{
 		std::cout << "ClapTrap " \
 		<< this->_name << " attacks " \
@@ -59,7 +61,7 @@ ClapTrap::attack(const std::string &target)
 		this->_EnergyPoints -= 1;
 	}
 	else
-		std::cout << "ClapTrap" << this->_name << " has no energy to attack" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no energy to attack" << std::endl;
 }
 
 void
@@ -73,7 +75,7 @@ ClapTrap::beRepaired(unsigned int num)
 		this->_EnergyPoints -= 1;
 	}
 	else
-		std::cout << "ClapTrap" << this->_name << " has no energy to heal" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " has no energy to heal" << std::endl;
 }
 
 void
@@ -86,5 +88,5 @@ ClapTrap::takeDamage(unsigned int num)
 		((this->_hitPoints - (int)num) < 0) ? this->_hitPoints = 0 : this->_hitPoints -= num;
 	}
 	else
-		std::cout << "ClapTrap" << this->_name << " is already dead" << std::endl;
+		std::cout << "ClapTrap " << this->_name << " is already dead" << std::endl;
 }
