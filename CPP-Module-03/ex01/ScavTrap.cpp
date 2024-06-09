@@ -57,9 +57,7 @@ ScavTrap::~ScavTrap(void)
 
 void ScavTrap::guardGate(void)
 {
-	#if DEBUG_MSG == 1
 	std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode." << std::endl;
-	#endif
 }
 
 void ScavTrap::attack(const std::string &target)
