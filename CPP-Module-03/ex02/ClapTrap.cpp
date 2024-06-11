@@ -1,36 +1,51 @@
 #include "ClapTrap.hpp"
 
+/*
+ClapTrap Default Constructor
+*/
 ClapTrap::ClapTrap(void)
 : _name("Default"), _hitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
 	#if DEBUG_MSG == 1
-	std::cout << "ClapTrap Default constructor called" << std::endl;
+	std::cout << "ClapTrap Default Constructor Called" << std::endl;
 	#endif
 }
 
+/*
+ClapTrap Constructor
+*/
 ClapTrap::ClapTrap(const std::string newName)
 : _name(newName), _hitPoints(10), _EnergyPoints(10), _AttackDamage(0)
 {
 	#if DEBUG_MSG == 1
-	std::cout << "ClapTrap default constructor called" << std::endl;
+	std::cout << "ClapTrap Constructor Called" << std::endl;
 	#endif
 }
 
+/*
+ClapTrap Copy Constructor
+*/
 ClapTrap::ClapTrap(ClapTrap const & arg)
 : _name(arg._name),_hitPoints(arg._hitPoints),_EnergyPoints(arg._EnergyPoints),_AttackDamage(arg._AttackDamage)
 {
 	#if DEBUG_MSG == 1
-	std::cout << "ClapTrap copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy Constructor Called" << std::endl;
 	#endif
 }
 
+/*
+ClapTrap Destructor
+*/
 ClapTrap::~ClapTrap(void)
 {
 	#if DEBUG_MSG == 1
-	std::cout << "ClapTrap Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor Called" << std::endl;
 	#endif
 }
 
+/*
+ClapTrap Copy Assigment operator
+*/
 ClapTrap &
 ClapTrap::operator=(ClapTrap const & arg)
 {
@@ -42,7 +57,7 @@ ClapTrap::operator=(ClapTrap const & arg)
 		this->_name = arg._name;
 	}
 	#if DEBUG_MSG == 1
-	std::cout << "ClapTrap Copy assigment called" << std::endl;
+	std::cout << "ClapTrap Copy Assigment Constructor Called" << std::endl;
 	#endif
 	return *this;
 }
@@ -50,7 +65,9 @@ ClapTrap::operator=(ClapTrap const & arg)
 void
 ClapTrap::attack(const std::string &target)
 {
-	if(this->_EnergyPoints > 0)
+	if(!this->_hitPoints)
+		std::cout << "ClapTrap " << this->_name << " can't attack while he's dead" << std::endl;
+	else if(this->_EnergyPoints > 0)
 	{
 		std::cout << "ClapTrap " \
 		<< this->_name << " attacks " \
