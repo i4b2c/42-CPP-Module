@@ -1,5 +1,8 @@
 #include "ScavTrap.hpp"
 
+/*
+Default ScavTrap Constructor
+*/
 ScavTrap::ScavTrap(void)
 : ClapTrap("Default")
 {
@@ -11,6 +14,9 @@ ScavTrap::ScavTrap(void)
 	#endif
 }
 
+/*
+ScavTrap Constructor
+*/
 ScavTrap::ScavTrap(std::string name)
 : ClapTrap(name)
 {
@@ -22,6 +28,9 @@ ScavTrap::ScavTrap(std::string name)
 	#endif
 }
 
+/*
+ScavTrap Copy Constructor
+*/
 ScavTrap::ScavTrap(ScavTrap const & arg)
 : ClapTrap(arg._name)
 {
@@ -29,10 +38,13 @@ ScavTrap::ScavTrap(ScavTrap const & arg)
 	this->_EnergyPoints = arg._EnergyPoints;
 	this->_hitPoints = arg._hitPoints;
 	#if DEBUG_MSG == 1
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << "ScavTrap Copy Constructor Called" << std::endl;
 	#endif
 }
 
+/*
+ScavTrap Copy Assigment operator
+*/
 ScavTrap &ScavTrap::operator=(ScavTrap const & arg)
 {
 	if(this != &arg)
@@ -43,15 +55,18 @@ ScavTrap &ScavTrap::operator=(ScavTrap const & arg)
 		this->_name = arg._name;
 	}
 	#if DEBUG_MSG == 1
-	std::cout << "ScavTrap Copy assigment constructor called" << std::endl;
+	std::cout << "ScavTrap Copy Assigment Constructor Called" << std::endl;
 	#endif
 	return *this;
 }
 
+/*
+ScavTrap Destructor
+*/
 ScavTrap::~ScavTrap(void)
 {
 	#if DEBUG_MSG == 1
-	std::cout << "ScavTrap Default destructor called" << std::endl;
+	std::cout << "ScavTrap Destructor Called" << std::endl;
 	#endif
 }
 
@@ -62,7 +77,9 @@ void ScavTrap::guardGate(void)
 
 void ScavTrap::attack(const std::string &target)
 {
-	if(this->_EnergyPoints > 0)
+	if(!this->_hitPoints)
+		std::cout << "ScavTrap " << this->_name << " can't attack while he's dead" << std::endl;
+	else if(this->_EnergyPoints > 0)
 	{
 		std::cout << "ScavTrap " \
 		<< this->_name << " attacks " \
