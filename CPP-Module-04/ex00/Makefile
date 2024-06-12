@@ -5,8 +5,9 @@ NAME = animal
 CXX = c++
 
 #ARQUIVOS
-SRCS =	srcs/main.cpp \
-		srcs/Animal.cpp
+SRCS =	main.cpp \
+		WrongAnimal.cpp \
+		Animal.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
