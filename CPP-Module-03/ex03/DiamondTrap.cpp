@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
     this->_AttackDamage = FragTrap::DefaultAttackDamage;
 
     #if DEBUG_MSG == 1
-    std::cout << "DiamondTrap constructor called" << std::endl;
+    std::cout << "DiamondTrap Constructor Called" << std::endl;
     #endif
 }
 
@@ -22,19 +22,19 @@ DiamondTrap::DiamondTrap(void)
     this->_EnergyPoints = ScavTrap::DefaultEnergyPoints;
     this->_AttackDamage = FragTrap::DefaultAttackDamage;
     #if DEBUG_MSG == 1
-    std::cout << "Default DiamondTrap constructor called" << std::endl;
+    std::cout << "DiamondTrap Default Constructor Called" << std::endl;
     #endif
 }
 
 DiamondTrap::~DiamondTrap(void)
 {
     #if DEBUG_MSG == 1
-    std::cout << "DiamondTrap destructor called" << std::endl;
+    std::cout << "DiamondTrap Destructor Called" << std::endl;
     #endif
 }
 
 void DiamondTrap::whoAmI(void)
 {
-    std::cout << "Diamond trap real name : " << this->_name << std::endl \
-    << "Clap Trap name : " << this->ClapTrap::_name << std::endl;
+    std::cout << "DiamondTrap real name : " << this->_name << std::endl \
+    << "ClapTrap name : " << this->ClapTrap::_name << std::endl;
 }

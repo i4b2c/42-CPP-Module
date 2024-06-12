@@ -1,14 +1,8 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string &name)
-: ClapTrap(name)
-{
-    this->_hitPoints = 100;
-	this->_EnergyPoints = 100;
-	this->_AttackDamage = 30;
-    std::cout << "FragTrap constructor called" << std::endl;
-}
-
+/*
+FragTrap Default Constructor
+*/
 FragTrap::FragTrap(void)
 : ClapTrap("Default")
 {
@@ -16,10 +10,25 @@ FragTrap::FragTrap(void)
 	this->_EnergyPoints = 100;
 	this->_AttackDamage = 30;
     #if DEBUG_MSG == 1
-    std::cout << "FragTrap default constructor called" << std::endl;
+    std::cout << "FragTrap Default Constructor Called" << std::endl;
     #endif
 }
 
+/*
+FragTrap Constructor
+*/
+FragTrap::FragTrap(const std::string &name)
+: ClapTrap(name)
+{
+    this->_hitPoints = 100;
+	this->_EnergyPoints = 100;
+	this->_AttackDamage = 30;
+    std::cout << "FragTrap Constructor Called" << std::endl;
+}
+
+/*
+FragTrap Copy Constructor
+*/
 FragTrap::FragTrap(FragTrap const & arg)
 : ClapTrap(arg._name)
 {
@@ -27,10 +36,13 @@ FragTrap::FragTrap(FragTrap const & arg)
 	this->_EnergyPoints = arg._EnergyPoints;
 	this->_AttackDamage = arg._AttackDamage;
     #if DEBUG_MSG == 1
-    std::cout << "FragTrap copy constructor called" << std::endl;
+    std::cout << "FragTrap Copy Constructor Called" << std::endl;
     #endif
 }
 
+/*
+FragTrap Copy Assigment Operator
+*/
 FragTrap &FragTrap::operator=(FragTrap const & arg)
 {
     if(this != &arg)
@@ -41,19 +53,23 @@ FragTrap &FragTrap::operator=(FragTrap const & arg)
         this->_name = arg._name;
     }
     #if DEBUG_MSG == 1
-    std::cout << "FragTrap Copy assigment called" << std::endl;
+    std::cout << "FragTrap Copy Assigment Called" << std::endl;
     #endif
     return *this;
 }
 
+/*
+FragTrap Destructor
+*/
 FragTrap::~FragTrap(void)
 {
     #if DEBUG_MSG == 1
-    std::cout << "FragTrap destructor called" << std::endl;
+    std::cout << "FragTrap Destructor Called" << std::endl;
     #endif
 }
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "Can you give me high five ? :)" << std::endl;
+    std::cout << "FragTrap " << this->_name \
+    << " can you give me a high five? :)" << std::endl;
 }
