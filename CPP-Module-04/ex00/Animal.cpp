@@ -24,7 +24,9 @@ Animal::~Animal(void)
 	#endif
 }
 
-//Dog class
+/*
+Dog Class
+*/
 Dog::Dog(void): Animal()
 {
     this->type = "Dog";
@@ -45,7 +47,9 @@ void Dog::makeSound() const
 	std::cout << "Animal: Woof Woof" << std::endl;
 }
 
-//Cat class
+/*
+Cat Class
+*/
 Cat::Cat(void): Animal()
 {
     this->type = "Cat";
