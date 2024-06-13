@@ -2,9 +2,7 @@
 
 void Animal::makeSound(void) const
 {
-	#if DEBUG_MSG == 1
 	std::cout << "Animal: Undefined Sound" << std::endl;
-	#endif
 }
 
 std::string Animal::getType(void) const
