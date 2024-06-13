@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#define DEBUG_MSG 1
+#define DEBUG_MSG 0
 
 class WrongAnimal
 {

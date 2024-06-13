@@ -4,16 +4,18 @@
 #include <iostream>
 #include <string>
 
+#define DEBUG_MSG 0
+
 class Animal
 {
     protected:
         std::string type;
     public:
-        void makeSound(void) const;
+        virtual void makeSound(void) const;
         std::string getType(void) const;
 
         Animal(void);
-        ~Animal(void);
+        virtual ~Animal(void);
 };
 
 class Dog: public Animal
@@ -21,6 +23,8 @@ class Dog: public Animal
     public:
         Dog(void);
         ~Dog(void);
+
+		void makeSound(void) const;
 };
 
 class Cat: public Animal
@@ -28,6 +32,8 @@ class Cat: public Animal
     public:
         Cat(void);
         ~Cat(void);
+
+		void makeSound(void) const;
 };
 
 #endif

@@ -33,7 +33,7 @@ void test_main(void)
 
 int main()
 {
-	test_wrong();
 	test_main();
+	test_wrong();
     return 0;
 }
