@@ -5,11 +5,14 @@ NAME = animal
 CXX = c++
 
 #ARQUIVOS
-SRCS =	main.cpp \
-		WrongAnimal.cpp \
-		Animal.cpp
+SRCS =	./srcs/Animal.cpp \
+		./srcs/Cat.cpp \
+		./srcs/Dog.cpp \
+		./srcs/WrongAnimal.cpp \
+		./srcs/WrongCat.cpp
 
 OBJS = $(SRCS:.cpp=.o)
+MAIN = main.cpp
 
 #FLAGS
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
@@ -20,7 +23,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) $(MAIN) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
