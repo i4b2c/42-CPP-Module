@@ -26,7 +26,6 @@ Dog &Dog::operator=(const Dog &arg)
 	return *this;
 }
 
-
 Dog::~Dog(void)
 {
 	#if DEBUG_MSG == 1
@@ -36,6 +35,6 @@ Dog::~Dog(void)
 
 void Dog::makeSound() const
 {
-	std::cout << "Animal: Woof Woof" << std::endl;
+	std::cout << "Dog: Woof Woof" << std::endl;
 }
 

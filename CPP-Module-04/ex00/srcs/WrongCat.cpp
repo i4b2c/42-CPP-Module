@@ -35,5 +35,5 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-	std::cout << "WrongAnimal: Woof Woof" << std::endl;
+	std::cout << "WrongCat: Meow Meow" << std::endl;
 }
